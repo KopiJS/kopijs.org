@@ -3,43 +3,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kopi.JS</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<style>
-  html, body{
-    font-family: 'helvetica neue', helvetica, arial, sans-serif;
-  }
-  header.jumbotron{
-    color: #fff;
-    background: #6e4228;
-    text-align: center;
-    margin-bottom: 1px;
-  }
-  header img{
-    max-width: 100%;
-  }
-  header h1{
-    font-weight: bold;
-    letter-spacing: -2px;
-  }
-  header p{
-    color: #e9ddd7;
-  }
-  .content{
-    margin: auto;
-    width: 480px;
-    max-width: 100%;
-  }
-  .content h2{
-    margin-top: 60px;
-    color: #6e4228;
-  }
-  body>footer{
-    border-top: 1px solid #eee;
-    color: #999;
-    margin-top: 6em;
-    padding: 3em 0;
-    text-align: center;
-  }
-</style>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,600,400" rel="stylesheet">
+<link rel="stylesheet" href="assets/kopiio.css">
 <header class="jumbotron">
   <div class="container">
     <img src="assets/kopijs-logo.svg" width="300" height="290" alt="">
@@ -66,19 +31,47 @@
     <p>It all started from this tweet by <b>Lakshan Perera</b>:</p>
     <blockquote class="twitter-tweet" lang="en"><p>Ordered Kopi C Siew Dai. Kopi uncle is impressed.</p>&mdash; Lakshan Perera (@laktek) <a href="https://twitter.com/laktek/status/400080522656759808">November 12, 2013</a></blockquote>
     <p>The conversation went on and on&hellip;</p>
-    <blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/chuyeow">@chuyeow</a> <a href="https://twitter.com/soulofpeace">@soulofpeace</a> <a href="https://twitter.com/laktek">@laktek</a> we need to write specs for this</p>&mdash; Lim Chee Aun (@cheeaun) <a href="https://twitter.com/cheeaun/status/400148296687054848">November 12, 2013</a></blockquote>
-    <blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/cheeaun">@cheeaun</a> <a href="https://twitter.com/soulofpeace">@soulofpeace</a> <a href="https://twitter.com/laktek">@laktek</a> GitHub repo now!</p>&mdash; Chu Yeow (@chuyeow) <a href="https://twitter.com/chuyeow/status/400148542678761472">November 12, 2013</a></blockquote>
-    <blockquote class="twitter-tweet" data-conversation="none" data-cards="hidden" lang="en"><p><a href="https://twitter.com/cheeaun">@cheeaun</a> <a href="https://twitter.com/chuyeow">@chuyeow</a> <a href="https://twitter.com/soulofpeace">@soulofpeace</a> here you go! <a href="https://t.co/6kZ99sdbsp">https://t.co/6kZ99sdbsp</a></p>&mdash; Lakshan Perera (@laktek) <a href="https://twitter.com/laktek/status/400149876249358336">November 12, 2013</a></blockquote>
+    <blockquote class="twitter-tweet" data-conversation="none" lang="en">
+      <p><a href="https://twitter.com/chuyeow">@chuyeow</a> <a href="https://twitter.com/soulofpeace">@soulofpeace</a> <a href="https://twitter.com/laktek">@laktek</a> we need to write specs for this</p>&mdash; Lim Chee Aun (@cheeaun)
+      <a href="https://twitter.com/cheeaun/status/400148296687054848">November 12, 2013</a>
+    </blockquote>
+    <blockquote class="twitter-tweet" data-conversation="none" lang="en">
+      <p><a href="https://twitter.com/cheeaun">@cheeaun</a> <a href="https://twitter.com/soulofpeace">@soulofpeace</a> <a href="https://twitter.com/laktek">@laktek</a> GitHub repo now!</p>&mdash; Chu Yeow (@chuyeow)
+      <a href="https://twitter.com/chuyeow/status/400148542678761472">November 12, 2013</a>
+    </blockquote>
+    <blockquote class="twitter-tweet" data-conversation="none" data-cards="hidden" lang="en">
+      <p><a href="https://twitter.com/cheeaun">@cheeaun</a> <a href="https://twitter.com/chuyeow">@chuyeow</a> <a href="https://twitter.com/soulofpeace">@soulofpeace</a> here you go! <a href="https://t.co/6kZ99sdbsp">https://t.co/6kZ99sdbsp</a></p>&mdash; Lakshan Perera (@laktek)
+      <a href="https://twitter.com/laktek/status/400149876249358336">November 12, 2013</a>
+    </blockquote>
     <p>Boom. And now you're here reading this.</p>
 
     <h2>Enough story, show me the kopi!</h2>
     <p>Relax lah, bro. Here goes.</p>
   </div>
+</div>
 
-  <div class="wide-content">
-    <p>TODO: Show a grid of kopi cups and their ingredients here</p>
-  </div>
+<div class="wide-container" style="background: #6e4228">
+  <ul id="kopi-legend" title="Legend">
+    <li class="water">Water</li>
+    <li class="condensed_milk">Condensed milk</li>
+    <li class="evaporated_milk">Evaporated milk</li>
+    <li class="coffee">Coffee</li>
+  </ul>
+  <ul id="kopi-list">
+    <li>Kopi</li>
+    <li>Kopi O</li>
+    <li>Kopi C</li>
+    <li>Kopi Kosong</li>
+    <li>Kopi Gah Dai</li>
+    <li>Kopi Siu Dai</li>
+    <li>Kopi Po</li>
+    <li>Kopi Gau</li>
+    <li>Kopi Di Lo</li>
+    <li>Kopi Peng</li>
+  </ul>
+</div>
 
+<div class="container">
   <div class="content">
     <h2>Documentation</h2>
     <p>Kopi.js can do two important things:</p>
@@ -102,3 +95,5 @@
 </footer>
 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="assets/kopi.min.js"></script>
+<script src="assets/kopiio.js"></script>

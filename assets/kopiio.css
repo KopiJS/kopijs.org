@@ -1,0 +1,158 @@
+html, body{
+  font-family: 'open sans', 'helvetica neue', helvetica, arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header.jumbotron{
+  color: #fff;
+  background: #6e4228;
+  text-align: center;
+  margin-bottom: 1px;
+}
+header img{
+  max-width: 100%;
+}
+header h1{
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+header p{
+  color: #e9ddd7;
+}
+.wide-container{
+  margin-top: 60px;
+  padding: 60px 20px;
+}
+.content{
+  margin: auto;
+  width: 480px;
+  max-width: 100%;
+}
+.content h2{
+  margin-top: 60px;
+  color: #6e4228;
+}
+body>footer{
+  border-top: 1px solid #eee;
+  color: #999;
+  margin-top: 6em;
+  padding: 3em 0;
+  text-align: center;
+}
+
+#kopi-legend{
+  margin: 0 0 60px;
+  padding: 0;
+  word-spacing: 10px;
+  color: #fff;
+  text-align: center;
+}
+#kopi-legend li{
+  display: inline-block;
+  padding: 10px 25px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  word-spacing: normal;
+}
+
+#kopi-list{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  letter-spacing: 40px;
+  line-height: 100px;
+  color: #fff;
+}
+#kopi-list li{
+  display: inline-block;
+  line-height: normal;
+  opacity: .85;
+  transition: .6s opacity;
+}
+#kopi-list li:hover{
+  opacity: 1;
+}
+.kopi-name{
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: normal;
+}
+
+.kopi{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  z-index: 10;
+}
+.cup{
+  box-sizing: border-box;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 2px 0 25px 25px / 0 0 35px 35px;
+  border: 10px solid #fff;
+  border-top: 0;
+  margin: 0 auto;
+}
+.cup:before{
+  content: '';
+  display: block;
+  box-sizing: border-box;
+  border-radius: 0 25px 25px 0;
+  border: 10px solid #fff;
+  border-left: 0;
+  height: 40px;
+  width: 35px;
+  right: -35px;
+  position: absolute;
+  z-index: -1;
+}
+.ingredients{
+  position: absolute;
+  top: 10%;
+  z-index: -1;
+  height: 90%;
+  width: 100%;
+}
+
+.water{
+  color: #201816;
+  background: #C7E2F2;
+  text-shadow: 0 0 3px #fff;
+}
+.coffee{
+  background: #201816;
+}
+.condensed_milk{
+  color: #201816;
+  background: #E9DDD7;
+  text-shadow: 0 0 3px #fff;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0,0,0,.1) 10px,
+    rgba(0,0,0,.1) 20px
+  );
+}
+.evaporated_milk{
+  color: #201816;
+  background-color: #FFF6D7;
+  text-shadow: 0 0 3px #fff;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    rgba(0,0,0,.1) 10px,
+    rgba(0,0,0,.1) 20px
+  );
+}
+
+.plate{
+  background: #fff;
+  width: 130px;
+  height: 10px;
+  border-radius: 35%/100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
