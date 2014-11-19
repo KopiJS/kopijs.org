@@ -2,15 +2,19 @@ html, body{
   font-family: 'open sans', 'helvetica neue', helvetica, arial, sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 header.jumbotron{
   color: #fff;
   background: #6e4228;
   text-align: center;
   margin-bottom: 1px;
+  overflow: hidden;
 }
 header img{
   max-width: 100%;
+  z-index: 10;
+  position: relative;
 }
 header h1{
   font-weight: bold;
@@ -60,17 +64,13 @@ body>footer{
   padding: 0;
   text-align: center;
   letter-spacing: 40px;
-  line-height: 100px;
+  line-height: 150px;
   color: #fff;
 }
 #kopi-list li{
   display: inline-block;
   line-height: normal;
-  opacity: .85;
   transition: .6s opacity;
-}
-#kopi-list li:hover{
-  opacity: 1;
 }
 .kopi-name{
   text-align: center;
@@ -84,14 +84,26 @@ body>footer{
   text-align: center;
   z-index: 10;
 }
+.kopi .sugar{
+  position: absolute;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  transform: rotate(45deg) translateX(-40px);
+}
+.kopi .sugar-double{
+  transform: rotate(45deg) translateX(-50px);
+  box-shadow: 20px 5px 0 rgba(255,255,255, 0.5);
+}
 .cup{
   box-sizing: border-box;
   position: relative;
   width: 80px;
-  height: 80px;
+  height: 70px;
   border-radius: 2px 0 25px 25px / 0 0 35px 35px;
   border: 10px solid #fff;
-  border-top: 0;
+  border-top: 0 solid;
   margin: 0 auto;
 }
 .cup:before{
@@ -115,6 +127,11 @@ body>footer{
   width: 100%;
 }
 
+.sugar{
+  color: #201816;
+  background: rgba(255,255,255,0.5);
+  text-shadow: 0 0 3px #fff;
+}
 .water{
   color: #201816;
   background: #C7E2F2;
@@ -155,4 +172,68 @@ body>footer{
   border-radius: 35%/100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+/* BEAMS */
+
+.beam-group{
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  margin: 180px 0 0;
+  -webkit-perspective: 50px;
+  perspective: 50px;
+  -webkit-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  -webkit-animation: wiggle 10s ease-in-out infinite alternate;
+  animation: wiggle 10s ease-in-out infinite alternate;
+}
+
+@media only screen and (min-width: 788px){
+  .beam-group{
+    display: block;
+  }
+}
+
+.beam{
+  display: inline-block;
+  width: 49%;
+  height: 10px;
+  background-color: rgba(255,255,255,.03);
+  vertical-align: top;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+}
+.beam-left{
+  -webkit-transform-origin: right center;
+  transform-origin: right center;
+  -webkit-transform: rotateY(45deg);
+  transform: rotateY(45deg);
+  margin-bottom: 10px;
+}
+.beam-right{
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+  -webkit-transform: rotateY(-45deg);
+  transform: rotateY(-45deg);
+}
+
+@-webkit-keyframes wiggle {
+  from {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes wiggle {
+  from {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(5deg);
+  }
 }
