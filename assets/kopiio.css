@@ -53,10 +53,13 @@ body>footer{
 }
 #kopi-legend li{
   display: inline-block;
-  padding: 10px 25px;
+  padding: 7px 25px;
   margin-bottom: 10px;
   border-radius: 20px;
   word-spacing: normal;
+}
+#kopi-legend li label{
+  margin: 0;
 }
 
 #kopi-list{
@@ -77,12 +80,23 @@ body>footer{
   margin-top: 10px;
   letter-spacing: normal;
 }
+.peng-name{
+  display: none;
+}
+.peng .peng-name{
+  display: inline;
+}
 
 .kopi{
   position: relative;
   display: inline-block;
   text-align: center;
   z-index: 10;
+}
+.kopi *,
+.kopi *:before{
+  -webkit-transition: .3s all;
+  transition: .3s all;
 }
 .kopi .sugar{
   position: absolute;
@@ -98,6 +112,33 @@ body>footer{
   transform: rotate(45deg) translateX(-50px);
   box-shadow: 20px 5px 0 rgba(255,255,255, 0.5);
 }
+.kopi .sugar-triple{
+  -webkit-transform: rotate(45deg) translateX(-50px);
+  transform: rotate(45deg) translateX(-50px);
+  box-shadow: 20px 5px 0 rgba(255,255,255, 0.5), 30px -15px 0 rgba(255,255,255, 0.5);
+}
+.kopi .ice-blocks{
+  position: absolute;
+  opacity: 0;
+  transform: translateY(-100px);
+}
+.peng .kopi .ice-blocks{
+  opacity: 1;
+  transform: translateY(0);
+}
+.kopi .ice{
+  position: absolute;
+  top: 10px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+}
+.kopi .ice+.ice{
+  top: 35px;
+}
+.kopi .ice+.ice+.ice{
+  top: 60px;
+}
 .cup{
   box-sizing: border-box;
   position: relative;
@@ -107,6 +148,9 @@ body>footer{
   border: 10px solid #fff;
   border-top: 0 solid;
   margin: 0 auto;
+}
+.peng .cup{
+  height: 100px;
 }
 .cup:before{
   content: '';
@@ -121,6 +165,11 @@ body>footer{
   position: absolute;
   z-index: -1;
 }
+.peng .cup:before{
+  border-radius: 0 20px 20px 0;
+  height: 60px;
+  top: 10%;
+}
 .ingredients{
   position: absolute;
   top: 10%;
@@ -132,6 +181,11 @@ body>footer{
 .sugar{
   color: #201816;
   background: rgba(255,255,255,0.5);
+  text-shadow: 0 0 3px #fff;
+}
+.ice{
+  color: #201816;
+  background: rgba(255,255,255,0.9);
   text-shadow: 0 0 3px #fff;
 }
 .water{
@@ -174,6 +228,10 @@ body>footer{
   border-radius: 35%/100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.peng .plate{
+  opacity: 0;
+  height: 0;
 }
 
 /* BEAMS */
