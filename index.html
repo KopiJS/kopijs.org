@@ -54,7 +54,7 @@
     <p>Boom. And now you're here reading this.</p>
 
     <h2>Enough story, show me the kopi!</h2>
-    <p>Relax lah, bro. Here goes.</p>
+    <p>Relax <a href="http://www.urbandictionary.com/define.php?term=lah&defid=1225427">lah</a>, bro. Here goes.</p>
   </div>
 </div>
 
@@ -65,18 +65,18 @@
     <li class="condensed_milk">Condensed milk</li>
     <li class="evaporated_milk">Evaporated milk</li>
     <li class="coffee">Coffee</li>
-    <li class="ice"><label><input type="checkbox" id="kopi-peng"> Peng</label></li>
+    <li class="ice"><label><input type="checkbox" id="kopi-peng"> Ice</label></li>
   </ul>
   <ul id="kopi-list">
-    <li title="With condensed milk">Kopi</li>
-    <li title="No milk">Kopi O</li>
-    <li title="With evaporated milk">Kopi C</li>
-    <li title="No sugar">Kopi Kosong</li>
-    <li title="More sweet">Kopi Gah Dai</li>
-    <li title="Less sweet">Kopi Siu Dai</li>
-    <li title="More water">Kopi Po</li>
-    <li title="More coffee">Kopi Gau</li>
-    <li title="No water">Kopi Di Lo</li>
+    <li>Kopi</li>
+    <li>Kopi O</li>
+    <li>Kopi C</li>
+    <li>Kopi Kosong</li>
+    <li>Kopi Gah Dai</li>
+    <li>Kopi Siu Dai</li>
+    <li>Kopi Po</li>
+    <li>Kopi Gau</li>
+    <li>Kopi Di Lo</li>
     <li>Kopi O Kosong</li>
     <li>Kopi C Kosong</li>
     <li>Kopi O Gah Dai</li>
@@ -97,7 +97,7 @@
       <li>Accept a bunch of ingredients and generate the string for you.</li>
       <li>Parse a Kopi order string and return the ingredients for you.</li>
     </ol>
-    <p>Everything also for you. Nice leh.</p>
+    <p>Everything also for you. Nice <a href="http://www.urbandictionary.com/define.php?term=leh&defid=1691957">leh</a>.</p>
     <h3><code>Kopi</code></h3>
     <p><code>Kopi</code> is a singleton, like <code>JSON</code>. The methods available are also similar:</p>
     <ul>
@@ -116,6 +116,7 @@
       <li><code>sugar</code> - number, default <code>0</code>, 0 to infinite</li>
       <li><code>ice</code> - boolean, default <code>false</code></li>
     </ul>
+    <p>The sum of <code>water</code>, <code>coffee</code>, <code>condensed_milk</code> and <code>evaporated_milk</code> is always 1.</p>
     <h3><code>Kopi.stringify</code></h3>
     <pre><code>Kopi.stringify({water: .5, coffee: .5});
 // return 'Kopi O'</code></pre>
@@ -123,10 +124,10 @@
   </div>
 </div>
 
-<div class="wide-container">
+<div class="wide-container" id="meetup-container">
   <div class="content">
     <h2>Meetups</h2>
-    <p>Kopi.JS is not just a JavaScript library, it also sparks off its own meetups.</p>
+    <p>Kopi.JS is not just a JavaScript library, it also sparks off its own special meetup.</p>
     <blockquote class="twitter-tweet" lang="en">
       <p>Alrighty first <a href="https://twitter.com/hashtag/kopijs?src=hash">#kopijs</a> meetup success with <a href="https://twitter.com/chuyeow">@chuyeow</a> <a href="https://twitter.com/laktek">@laktek</a> <a href="https://twitter.com/soulofpeace">@soulofpeace</a></p>&mdash; Lim Chee Aun (@cheeaun)
       <a href="https://twitter.com/cheeaun/status/406427812682158081">November 29, 2013</a>
@@ -140,8 +141,16 @@
     <p>There are no talks, no speakers, no coding.</p>
     <p>It's a gathering of like-minded people who are interested in JavaScript, Kopi and almost anything.</p>
     <h3>Join us</h3>
-    <p>If you are in Singapore, feel free to join us and meet awesome peeps. If you're not in Singapore, feel free to fly to Singapore and join us. Either way, just join us.</p>
-    <!-- TODO: Hook up Google Calendar next meetup thing -->
+    <p>If you are in Singapore, feel free to join us and meet awesome people. If you're not in Singapore, feel free to fly to Singapore and join us. Either way, just join us and you won't regret.</p>
+    <p><a href="webcal://www.google.com/calendar/ical/dnhunu42fotmefouusg4j8ip0k%40group.calendar.google.com/public/basic.ics" class="btn btn-lg">Subscribe to our Kopi.JS meetup calendar</a></p>
+    <p><a href="http://www.google.com/calendar/render?cid=https%3A//www.google.com/calendar/ical/dnhunu42fotmefouusg4j8ip0k%40group.calendar.google.com/public/basic.ics" class="btn btn-lg">Or&hellip; subscribe in your Google Calendar</a></p>
+    <div id="next-meetup"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="content">
+    <p id="quote">Keep<br>Calm <small>and</small> Drink<br>Kopi</p>
   </div>
 </div>
 

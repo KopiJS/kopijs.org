@@ -72,15 +72,21 @@ body>footer{
 }
 #kopi-legend li label{
   margin: 0;
+  cursor: pointer;
 }
 
 #kopi-list{
   margin: 0;
   padding: 0;
   text-align: center;
-  letter-spacing: 40px;
+  letter-spacing: 15px;
   line-height: 150px;
   color: #fff;
+}
+@media only screen and (min-width: 788px){
+  #kopi-list{
+    letter-spacing: 40px;
+  }
 }
 #kopi-list li{
   display: inline-block;
@@ -91,6 +97,7 @@ body>footer{
   text-align: center;
   margin-top: 10px;
   letter-spacing: normal;
+  font-size: .9em;
 }
 .peng-name{
   display: none;
@@ -104,6 +111,7 @@ body>footer{
   display: inline-block;
   text-align: center;
   z-index: 10;
+  pointer-events: none;
 }
 .kopi *,
 .kopi *:before{
@@ -178,6 +186,7 @@ body>footer{
   z-index: -1;
 }
 .peng .cup:before{
+  border: 10px solid #fff;
   border-radius: 0 20px 20px 0;
   height: 60px;
   top: 10%;
@@ -244,6 +253,66 @@ body>footer{
 .peng .plate{
   opacity: 0;
   height: 0;
+}
+
+#meetup-container .btn{
+  border: 1px solid #fff;
+  display: block;
+  white-space: normal;
+}
+
+@media only screen and (min-width: 500px){
+  #meetup-container{
+    background-attachment: fixed;
+    background-position: center;
+    background-image: url(kopi-meetup.jpg);
+    background-size: cover;
+  }
+
+  #meetup-container .twitter-tweet{
+    opacity: .85;
+    transition: .3s opacity;
+  }
+  #meetup-container .twitter-tweet:hover{
+    opacity: 1;
+  }
+}
+
+/* QUOTE */
+
+#quote{
+  margin-top: 1.5em;
+  font-size: 63px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1em;
+  letter-spacing: -2px;
+  opacity: .5;
+  -webkit-animation: pulse 2s ease-in-out infinite alternate;
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+#quote small{
+  display: block;
+  font-size: 40%;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* BEAMS */

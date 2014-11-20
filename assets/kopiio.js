@@ -2,11 +2,14 @@
   var $kopiList = document.getElementById('kopi-list');
   var $kopis = $kopiList.getElementsByTagName('li');
   var $kopiPeng = document.getElementById('kopi-peng');
+  var $nextMeetup = document.getElementById('next-meetup');
 
-  $kopiPeng.addEventListener('change', function(){
+  var checkPeng = function(){
     var isPeng = $kopiPeng.checked;
-    $kopiList.classList.toggle('peng');
-  }, false);
+    $kopiList.classList.toggle('peng', isPeng);
+  };
+  setTimeout(checkPeng, 1000);
+  $kopiPeng.addEventListener('change', checkPeng, false);
 
   for (var i=0, l=$kopis.length; i<l; i++){
     var $kopi = $kopis[i];
@@ -46,9 +49,9 @@
       return (Math.random()*20 + 10).toFixed();
     };
     iceHTML = '<div class="ice-blocks">'
-        + '<div class="ice" style="transform: rotate(' + randDeg() + 'deg); left: ' + randLeft() + 'px"></div>'
-        + '<div class="ice" style="transform: rotate(' + randDeg() + 'deg); left: ' + randLeft() + 'px"></div>'
-        + '<div class="ice" style="transform: rotate(' + randDeg() + 'deg); left: ' + randLeft() + 'px"></div>'
+        + '<div class="ice" style="transform: rotate(' + randDeg() + 'deg); -webkit-transform: rotate(' + randDeg() + 'deg); left: ' + randLeft() + 'px"></div>'
+        + '<div class="ice" style="transform: rotate(' + randDeg() + 'deg); -webkit-transform: rotate(' + randDeg() + 'deg); left: ' + randLeft() + 'px"></div>'
+        + '<div class="ice" style="transform: rotate(' + randDeg() + 'deg); -webkit-transform: rotate(' + randDeg() + 'deg); left: ' + randLeft() + 'px"></div>'
       + '</div>';
 
     // Finally render the whole Kopi in its full glory
@@ -63,4 +66,26 @@
       + '<div class="kopi-name">' + name + ' <span class="peng-name">Peng</span></div>';
     $kopi.innerHTML = html;
   }
+
+  // Check for our next meetup
+  var xhr = new XMLHttpRequest();
+  var apiKey = 'AIzaSyBQ5UHrT9VP0H9s0Ud1xrDETuWqT-wExkw';
+  xhr.open('get', 'https://www.googleapis.com/calendar/v3/calendars/dnhunu42fotmefouusg4j8ip0k@group.calendar.google.com/events?key=' + apiKey + '&timeMin=' + (new Date().toISOString()), true);
+  xhr.onload = function(){
+    try {
+      var res = JSON.parse(this.responseText);
+      if (!res || !res.items || !res.items.length) return;
+      var firstEvent = res.items[0];
+      var date = new Date(firstEvent.start.dateTime);
+      var html = '<h3>Our Next Meetup</h3>'
+        + '<h4><a href="' + firstEvent.description.trim() + '">' + firstEvent.summary + '</a></h4>'
+        + '<time title="' + date.toString() + '">' + date.toLocaleString() + '</time><br>';
+      if (firstEvent.location){
+        html += firstEvent.location
+        + '<iframe width="100%" height="320" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=' + encodeURIComponent(firstEvent.location) + '&key=' + apiKey + '"></iframe>';
+      }
+      $nextMeetup.innerHTML = html;
+    } catch(e){}
+  };
+  xhr.send();
 })();
