@@ -90,9 +90,11 @@ body>footer{
   width: 15px;
   height: 15px;
   border-radius: 2px;
+  -webkit-transform: rotate(45deg) translateX(-40px);
   transform: rotate(45deg) translateX(-40px);
 }
 .kopi .sugar-double{
+  -webkit-transform: rotate(45deg) translateX(-50px);
   transform: rotate(45deg) translateX(-50px);
   box-shadow: 20px 5px 0 rgba(255,255,255, 0.5);
 }
