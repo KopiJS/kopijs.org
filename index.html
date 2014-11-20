@@ -58,7 +58,7 @@
   </div>
 </div>
 
-<div class="wide-container" style="background: #6e4228">
+<div class="wide-container">
   <ul id="kopi-legend" title="Legend">
     <li class="sugar">Sugar</li>
     <li class="water">Water</li>
@@ -98,20 +98,91 @@
       <li>Parse a Kopi order string and return the ingredients for you.</li>
     </ol>
     <p>Everything also for you. Nice leh.</p>
+    <h3><code>Kopi</code></h3>
+    <p><code>Kopi</code> is a singleton, like <code>JSON</code>. The methods available are also similar:</p>
+    <ul>
+      <li><code>Kopi.parse</code></li>
+      <li><code>Kopi.stringify</code></li>
+    </ul>
+    <h3><code>Kopi.parse</code></h3>
+    <pre><code>Kopi.parse('Kopi O');
+// return {water: 0.5, coffee: 0.5, condensed_milk: 0, evaporated_milk: 0, sugar: 0, ice: false}</code></pre>
+    <p>Ingredients:</p>
+    <ul>
+      <li><code>water</code> - number, default <code>1</code>, 0 to 1</li>
+      <li><code>coffee</code> - number, default <code>0</code>, 0 to 1</li>
+      <li><code>condensed_milk</code> (sweetened) - number, default <code>0</code>, 0 to 1</li>
+      <li><code>evaporated_milk</code> (unsweetened), number, default <code>0</code>, 0 to 1</li>
+      <li><code>sugar</code> - number, default <code>0</code>, 0 to infinite</li>
+      <li><code>ice</code> - boolean, default <code>false</code></li>
+    </ul>
+    <h3><code>Kopi.stringify</code></h3>
+    <pre><code>Kopi.stringify({water: .5, coffee: .5});
+// return 'Kopi O'</code></pre>
+    <p>That simple.</p>
+  </div>
+</div>
+
+<div class="wide-container">
+  <div class="content">
+    <h2>Meetups</h2>
+    <p>Kopi.JS is not just a JavaScript library, it also sparks off its own meetups.</p>
+    <blockquote class="twitter-tweet" lang="en">
+      <p>Alrighty first <a href="https://twitter.com/hashtag/kopijs?src=hash">#kopijs</a> meetup success with <a href="https://twitter.com/chuyeow">@chuyeow</a> <a href="https://twitter.com/laktek">@laktek</a> <a href="https://twitter.com/soulofpeace">@soulofpeace</a></p>&mdash; Lim Chee Aun (@cheeaun)
+      <a href="https://twitter.com/cheeaun/status/406427812682158081">November 29, 2013</a>
+    </blockquote>
+    <p>Even all the way <a href="https://github.com/KopiJS/kopi.js/issues/8">from Singapore to San Francisco</a>.</p>
+    <blockquote class="twitter-tweet" lang="en">
+      <p>Alrighty, <a href="https://twitter.com/hashtag/kopijs?src=hash">#kopijs</a> meetup success today with <a href="https://twitter.com/wynlim">@wynlim</a> <a href="https://twitter.com/jasonong">@jasonong</a> <a href="https://twitter.com/chuyeow">@chuyeow</a> <a href="https://twitter.com/laktek">@laktek</a> @ctrlaltreboot <a href="https://twitter.com/dqminh">@dqminh</a> <a href="https://twitter.com/siong1987">@siong1987</a></p>&mdash; Lim Chee Aun (@cheeaun)
+      <a href="https://twitter.com/cheeaun/status/447594879233687552">March 23, 2014</a>
+    </blockquote>
+    <p>Unlike any meetups, KopiJS meetups are very casual and informal.</p>
+    <p>There are no talks, no speakers, no coding.</p>
+    <p>It's a gathering of like-minded people who are interested in JavaScript, Kopi and almost anything.</p>
+    <h3>Join us</h3>
+    <p>If you are in Singapore, feel free to join us and meet awesome peeps. If you're not in Singapore, feel free to fly to Singapore and join us. Either way, just join us.</p>
+    <!-- TODO: Hook up Google Calendar next meetup thing -->
   </div>
 </div>
 
 <footer>
   <div class="container">
     <p>
-      <iframe src="http://ghbtns.com/github-btn.html?user=KopiJS&repo=kopi.js&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe>
-      <iframe src="http://ghbtns.com/github-btn.html?user=KopiJS&repo=kopi.js&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe>
+      <a href="https://github.com/KopiJS/kopi.js" data-user="KopiJS" data-repo="kopi.js" data-type="watch" class="ghbtn">Star</a>
+      <a href="https://github.com/KopiJS/kopi.js" data-user="KopiJS" data-repo="kopi.js" data-type="fork" class="ghbtn">Fork</a>
     </p>
+    <p><a href="https://github.com/kopiJS/kopi.js/issues">Help improve KopiJS. Open an issue or pull request.</a></p>
     <p>Designed and built by <a href="https://twitter.com/cheeaun">@cheeaun</a> and <a href="https://twitter.com/laktek">@laktek</a> with help of our <a href="https://github.com/KopiJS/kopi.js/graphs/contributors">contributors</a>.</p>
     <p>Licensed under <a href="http://cheeaun.mit-license.org/">MIT</a>.</p>
   </div>
 </footer>
 
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async>
+// Insert Twitter widget JS
+setTimeout(function(){
+  var s = document.createElement('script');
+  s.src = '//platform.twitter.com/widgets.js';
+  s.charset = 'utf-8';
+  document.body.appendChild(s);
+}, 50);
+// Insert GitHub buttons
+setTimeout(function(){
+  var ghbtns = document.querySelectorAll('.ghbtn');
+  for (var i=0, l=ghbtns.length; i<l; i++){
+    var ghbtn = ghbtns[i];
+    var user = ghbtn.dataset.user;
+    var repo = ghbtn.dataset.repo;
+    var type = ghbtn.dataset.type;
+    var iframe = document.createElement('iframe');
+    iframe.src = 'http://ghbtns.com/github-btn.html?user=' + user + '&repo=' + repo + '&type=' + type + '&count=true';
+    iframe.allowTransparency = true;
+    iframe.frameBorder = 0;
+    iframe.scrolling = 0;
+    iframe.width = 90;
+    iframe.height = 20;
+    ghbtn.parentNode.replaceChild(iframe, ghbtn);
+  }
+}, 100);
+</script>
 <script src="assets/kopi.min.js"></script>
 <script src="assets/kopiio.js"></script>

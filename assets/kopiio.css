@@ -24,8 +24,20 @@ header p{
   color: #e9ddd7;
 }
 .wide-container{
+  color: #fff;
+  background: #6e4228;
   margin-top: 60px;
   padding: 60px 20px;
+}
+.wide-container .content h2{
+  margin-top: 0;
+  color: #fff;
+}
+.wide-container a{
+  color: #e9ddd7;
+}
+.wide-container a:hover{
+  color: #fff;
 }
 .content{
   margin: auto;
