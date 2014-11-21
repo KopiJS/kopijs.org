@@ -2,8 +2,14 @@ html, body{
   font-family: 'open sans', 'helvetica neue', helvetica, arial, sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
+@media only screen and (min-width: 788px){
+  html, body{
+    /* Hide scrollbar because of the rotating beams */
+    overflow-x: hidden;
+  }
+}
+
 header.jumbotron{
   color: #fff;
   background: #6e4228;
@@ -57,18 +63,29 @@ body>footer{
 }
 
 #kopi-legend{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 20;
   margin: 0 0 60px;
-  padding: 0;
-  word-spacing: 10px;
+  padding: 10px 5px 0;
+  word-spacing: 5px;
   color: #fff;
   text-align: center;
+  background: rgba(110, 66, 40, .9);
 }
 #kopi-legend li{
   display: inline-block;
-  padding: 7px 25px;
+  padding: 3px 10px;
   margin-bottom: 10px;
   border-radius: 20px;
   word-spacing: normal;
+  white-space: nowrap;
+}
+@media only screen and (min-width: 788px){
+  #kopi-legend li{
+    padding: 5px 15px;
+  }
 }
 #kopi-legend li label{
   margin: 0;
@@ -281,6 +298,7 @@ body>footer{
 /* QUOTE */
 
 #quote{
+  color: #6e4228;
   margin-top: 1.5em;
   font-size: 63px;
   text-align: center;
