@@ -70,7 +70,9 @@
   // Check for our next meetup
   var xhr = new XMLHttpRequest();
   var apiKey = 'AIzaSyBQ5UHrT9VP0H9s0Ud1xrDETuWqT-wExkw';
-  xhr.open('get', 'https://www.googleapis.com/calendar/v3/calendars/dnhunu42fotmefouusg4j8ip0k@group.calendar.google.com/events?key=' + apiKey + '&timeMin=' + (new Date().toISOString()), true);
+  var today = new Date();
+  var yesterday = new Date((+today) - 43200000);
+  xhr.open('get', 'https://www.googleapis.com/calendar/v3/calendars/dnhunu42fotmefouusg4j8ip0k@group.calendar.google.com/events?key=' + apiKey + '&timeMin=' + yesterday.toISOString(), true);
   xhr.onload = function(){
     try {
       var res = JSON.parse(this.responseText);
