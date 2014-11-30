@@ -157,10 +157,12 @@ body>footer{
 .kopi .ice-blocks{
   position: absolute;
   opacity: 0;
+  -webkit-transform: translateY(-100px);
   transform: translateY(-100px);
 }
 .peng .kopi .ice-blocks{
   opacity: 1;
+  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 .kopi .ice{
