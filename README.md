@@ -1,4 +1,4 @@
-kopi.io
+kopijs.org
 ===
 
 Static landing page for KopiJS, served with GitHub Pages.
