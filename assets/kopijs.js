@@ -3,6 +3,7 @@
   var $kopis = $kopiList.getElementsByTagName('li');
   var $kopiPeng = document.getElementById('kopi-peng');
   var $nextMeetup = document.getElementById('next-meetup');
+  var $topNextMeetup = document.getElementById('top-next-meetup');
 
   var checkPeng = function(){
     var isPeng = $kopiPeng.checked;
@@ -79,14 +80,17 @@
       if (!res || !res.items || !res.items.length) return;
       var firstEvent = res.items[0];
       var date = new Date(firstEvent.start.dateTime);
+      var url = firstEvent.description.trim();
       var html = '<h3>Our Next Meetup</h3>'
-        + '<h4><a href="' + firstEvent.description.trim() + '">' + firstEvent.summary + '</a></h4>'
+        + '<h4><a href="' + url + '"><b>' + firstEvent.summary + '</b><br>' + url + '</a></h4>'
         + '<time title="' + date.toString() + '">' + date.toLocaleString() + '</time><br>';
       if (firstEvent.location){
         html += firstEvent.location
         + '<iframe width="100%" height="320" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=' + encodeURIComponent(firstEvent.location) + '&key=' + apiKey + '"></iframe>';
       }
       $nextMeetup.innerHTML = html;
+
+      $topNextMeetup.innerHTML = '<a href="#next-meetup">Check out our next meetup on ' + date.toLocaleDateString() + '!</a>';
     } catch(e){}
   };
   xhr.send();
