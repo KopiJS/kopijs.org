@@ -1,16 +1,21 @@
 (function(){
   var $kopiList = document.getElementById('kopi-list');
   var $kopis = $kopiList.getElementsByTagName('li');
-  var $kopiPeng = document.getElementById('kopi-peng');
+  var $kopiState1 = document.getElementById('kopi-state-1');
+  var $kopiState2 = document.getElementById('kopi-state-2');
+  var $kopiState3 = document.getElementById('kopi-state-3');
   var $nextMeetup = document.getElementById('next-meetup');
-  var $topNextMeetup = document.getElementById('top-next-meetup');
 
-  var checkPeng = function(){
-    var isPeng = $kopiPeng.checked;
-    $kopiList.classList.toggle('peng', isPeng);
+  var checkState = function(){
+    $kopiList.classList.toggle('warm', $kopiState1.checked);
+    $kopiList.classList.toggle('lukewarm', $kopiState2.checked);
+    $kopiList.classList.toggle('iced', $kopiState3.checked);
   };
-  setTimeout(checkPeng, 1000);
-  $kopiPeng.addEventListener('change', checkPeng, false);
+  checkState();
+  setTimeout(checkState, 1000);
+  $kopiState1.addEventListener('change', checkState, false);
+  $kopiState2.addEventListener('change', checkState, false);
+  $kopiState3.addEventListener('change', checkState, false);
 
   for (var i=0, l=$kopis.length; i<l; i++){
     var $kopi = $kopis[i];
@@ -46,8 +51,8 @@
       return (Math.random()*180).toFixed() - 90;
     };
     var randLeft = function(){
-      // Returns 10 to 30
-      return (Math.random()*20 + 10).toFixed();
+      // Returns 8 to 26
+      return (Math.random()*18 + 8).toFixed();
     };
     iceHTML = '<div class="ice-blocks">'
         + '<div class="ice" style="transform: rotate(' + randDeg() + 'deg); -webkit-transform: rotate(' + randDeg() + 'deg); left: ' + randLeft() + 'px"></div>'
@@ -55,8 +60,14 @@
         + '<div class="ice" style="transform: rotate(' + randDeg() + 'deg); -webkit-transform: rotate(' + randDeg() + 'deg); left: ' + randLeft() + 'px"></div>'
       + '</div>';
 
+    var state = ingredients.state;
+    ingredients.state = 'lukewarm';
+    var lukewarmName = Kopi.stringify(ingredients);
+    ingredients.state = 'iced';
+    var icedName = Kopi.stringify(ingredients);
+
     // Finally render the whole Kopi in its full glory
-    var html = '<div class="kopi ' + (ingredients.ice ? 'kopi-peng' : '') + '">'
+    var html = '<div class="kopi kopi-' + state + '">'
         + sugarHTML
         + '<div class="cup">'
           + '<div class="ingredients">' + internalIngredientsHTML + '</div>'
@@ -64,7 +75,11 @@
         + '</div>'
         + '<div class="plate"></div>'
       + '</div>'
-      + '<div class="kopi-name">' + name + ' <span class="peng-name">Peng</span></div>';
+      + '<div class="kopi-name">'
+        + '<span class="kopi-warm-name">' + name + '</span>'
+        + '<span class="kopi-lukewarm-name">' + lukewarmName + '</span>'
+        + '<span class="kopi-iced-name">' + icedName + '</span>'
+      + '</div>';
     $kopi.innerHTML = html;
   }
 
@@ -79,18 +94,20 @@
       var res = JSON.parse(this.responseText);
       if (!res || !res.items || !res.items.length) return;
       var firstEvent = res.items[0];
-      var date = new Date(firstEvent.start.dateTime);
       var url = firstEvent.description.trim();
-      var html = '<h3>Our Next Meetup</h3>'
-        + '<h4><a href="' + url + '"><b>' + firstEvent.summary + '</b><br>' + url + '</a></h4>'
-        + '<time title="' + date.toString() + '">' + date.toLocaleString() + '</time><br>';
+      var date = new Date(firstEvent.start.dateTime);
+      var momentDate = moment(date);
+      var humanDate = momentDate.format('dddd, D MMMM YYYY');
+      var humanTime = momentDate.format('h:mm A');
+      var html = '<a href="' + url + '">'
+        + '<h3>' + firstEvent.summary + '</h3>'
+        + '<p class="iconic"><i class="fa fa-fw fa-calendar-o"></i> <time title="' + date.toString() + '">' + humanDate + '<br>' + humanTime + '</time></p>'
+        + '<p class="iconic"><i class="fa fa-fw fa-map-marker"></i> ' + firstEvent.location + '</p>'
+        + '</a>';
       if (firstEvent.location){
-        html += firstEvent.location
-        + '<iframe width="100%" height="320" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=' + encodeURIComponent(firstEvent.location) + '&key=' + apiKey + '"></iframe>';
+        html += '<iframe width="100%" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=' + encodeURIComponent(firstEvent.location) + '&key=' + apiKey + '"></iframe>';
       }
       $nextMeetup.innerHTML = html;
-
-      $topNextMeetup.innerHTML = '<a href="#next-meetup">Check out our next meetup on ' + date.toLocaleDateString() + '!</a>';
     } catch(e){}
   };
   xhr.send();

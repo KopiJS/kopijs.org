@@ -1,95 +1,71 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kopi.JS &ndash; API for ordering Singaporean Coffee</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,600,400" rel="stylesheet">
+<title>Kopi.JS &ndash; a casual meetup for developers and designers in Singapore</title>
+<link href="http://fonts.googleapis.com/css?family=Khula:400,700|Merriweather:400,400italic,700,700italic" rel="stylesheet">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="assets/kopijs.css">
 <meta property="og:url" content="http://kopijs.org/">
 <meta property="og:title" content="Kopi.JS">
-<meta property="og:description" content="API for ordering Singaporean Coffee">
+<meta property="og:description" content="A casual meetup for developers and designers in Singapore">
 <meta property="og:image" content="http://kopijs.org/assets/kopijs-logo.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="600">
 <meta property="og:image:height" content="600">
-<header class="jumbotron">
-  <div class="beam-group">
-    <div class="beam beam-left"></div>
-    <div class="beam beam-right"></div>
-    <div class="beam beam-left"></div>
-    <div class="beam beam-right"></div>
-    <div class="beam beam-left"></div>
-    <div class="beam beam-right"></div>
-  </div>
+<header>
   <div class="container">
-    <img src="assets/kopijs-logo.svg" width="300" height="290" alt="">
+    <img src="assets/kopijs-outline.svg" width="150" height="150" alt="Kopi.JS logo">
     <h1>Kopi.JS</h1>
-    <p>API for ordering Singaporean Coffee</p>
+    <p>Kopi.JS is a casual meetup for developers and designers in Singapore. We hang out together and talk about Kopi<sup><a href="#what-kopi" title="What is Kopi?">?</a></sup>, JavaScript and&nbsp;anything.</p>
   </div>
 </header>
 
-<div id="top-next-meetup">
-</div>
-
 <div class="container">
-  <div class="content">
+  <ul id="top-nav">
+    <li><i class="fa fa-fw fa-medium"></i> <a href="https://medium.com/kopi-js-community/the-kopi-js-meetup-story-5ee2cd574678">Read the Story</a></li>
+    <li><i class="fa fa-fw fa-certificate"></i> <a href="https://www.stickermule.com/marketplace/3326-kopi-dot-js-sticker">Get stickers</a></li>
+    <li><i class="fa fa-fw fa-github"></i> <a href="https://github.com/KopiJS/kopi.js">Get the code</a></li>
+    <li><i class="fa fa-fw fa-slack"></i> <a href="http://kopijs.herokuapp.com/">Chat with us</a></li>
+  </ul>
 
-    <h2>What is Kopi?</h2>
-    <blockquote>
-      <p>The word <b>kopi</b> is a Malay/Hokkien term for coffee.</p>
-      <footer><a href="http://en.wikipedia.org/wiki/Kopi_tiam">Wikipedia: Kopi tiam</a></footer>
-    </blockquote>
-    <blockquote>
-      <p><b>Kopi</b> is a dark and full bodied brew, less bitter (and, you could argue, more aromatic) than Vietnamese versions, but with the same subtle caramel-sweetness that comes from canned condensed or evaporated milk.</p>
-      <footer><a href="http://drinks.seriouseats.com/2012/08/snapshots-from-singapore-a-guide-to-singaporean-coffee-kop-how-to-order-how-its-made.html">Snapshots from Singapore: A Guide to Singaporean Coffee</a></footer>
-    </blockquote>
-
-    <h2>What is Kopi.JS</h2>
-    <p>Kopi.JS is an incredibly lightweight <b>JavaScript library</b> for parsing Kopi ingredients and converting them to a legit Kopi order string. It can also do it the other way around. Obviously, it's built in <a href="http://coffeescript.org/">CoffeeScript</a> and tested with <a href="http://mochajs.org/">Mocha</a>.</p>
-    <p>The project is <a href="https://github.com/KopiJS/kopi.js">hosted on GitHub</a> and licensed under the <a href="http://cheeaun.mit-license.org/">MIT license</a>.You can report bugs and discuss features on the <a href="https://github.com/kopijs/kopi.js/issues">issues page</a>.</p>
-    <p>
-      <a href="https://github.com/KopiJS/kopi.js" data-user="KopiJS" data-repo="kopi.js" data-type="watch" class="ghbtn">Star</a>
-      <a href="https://github.com/KopiJS/kopi.js" data-user="KopiJS" data-repo="kopi.js" data-type="fork" class="ghbtn">Fork</a>
-    </p>
-
-    <h2>Why Kopi.JS?</h2>
-    <p>Because we need specs for Singapore Coffee!</p>
-    <p>It all started from this tweet by <b>Lakshan Perera</b>:</p>
-    <blockquote class="twitter-tweet" lang="en"><p>Ordered Kopi C Siew Dai. Kopi uncle is impressed.</p>&mdash; Lakshan Perera (@laktek) <a href="https://twitter.com/laktek/status/400080522656759808">November 12, 2013</a></blockquote>
-    <p>The conversation went on and on&hellip;</p>
-    <blockquote class="twitter-tweet" data-conversation="none" lang="en">
-      <p><a href="https://twitter.com/chuyeow">@chuyeow</a> <a href="https://twitter.com/soulofpeace">@soulofpeace</a> <a href="https://twitter.com/laktek">@laktek</a> we need to write specs for this</p>&mdash; Lim Chee Aun (@cheeaun)
-      <a href="https://twitter.com/cheeaun/status/400148296687054848">November 12, 2013</a>
-    </blockquote>
-    <blockquote class="twitter-tweet" data-conversation="none" lang="en">
-      <p><a href="https://twitter.com/cheeaun">@cheeaun</a> <a href="https://twitter.com/soulofpeace">@soulofpeace</a> <a href="https://twitter.com/laktek">@laktek</a> GitHub repo now!</p>&mdash; Chu Yeow (@chuyeow)
-      <a href="https://twitter.com/chuyeow/status/400148542678761472">November 12, 2013</a>
-    </blockquote>
-    <blockquote class="twitter-tweet" data-conversation="none" data-cards="hidden" lang="en">
-      <p><a href="https://twitter.com/cheeaun">@cheeaun</a> <a href="https://twitter.com/chuyeow">@chuyeow</a> <a href="https://twitter.com/soulofpeace">@soulofpeace</a> here you go! <a href="https://t.co/6kZ99sdbsp">https://t.co/6kZ99sdbsp</a></p>&mdash; Lakshan Perera (@laktek)
-      <a href="https://twitter.com/laktek/status/400149876249358336">November 12, 2013</a>
-    </blockquote>
-    <p>Boom. And now you're here reading this.</p>
-
-    <h2>Enough story, show me the kopi!</h2>
-    <p>Relax <a href="http://www.urbandictionary.com/define.php?term=lah&defid=1225427">lah</a>, bro. Here goes.</p>
-  </div>
+  <h2>Join us!</h2>
+  <div id="next-meetup"></div>
+  <p class="iconic"><i class="fa fa-fw fa-users"></i> Kopi.JS is for <strong>anyone</strong> who build and design things. There are no speakers and no presentations. No JavaScript&nbsp;required.</p>
+  <p class="iconic"><i class="fa fa-fw fa-ticket"></i> Our events are hosted as <a href="https://github.com/KopiJS/kopi.js/labels/event">GitHub issues</a> and feel free to check out our <a href="https://github.com/KopiJS/kopi.js/issues?q=label%3Aevent+is%3Aclosed">past meetups</a>. We are also on&nbsp;<a href="http://lanyrd.com/series/kopijs/">Lanyrd</a>.</p>
+  <p class="iconic"><i class="fa fa-fw fa-calendar"></i> Stay updated by <a href="webcal://www.google.com/calendar/ical/dnhunu42fotmefouusg4j8ip0k%40group.calendar.google.com/public/basic.ics" class="btn btn-lg">subscribing to our calendar</a> or <a href="http://www.google.com/calendar/render?cid=https%3A//www.google.com/calendar/ical/dnhunu42fotmefouusg4j8ip0k%40group.calendar.google.com/public/basic.ics" class="btn btn-lg">saving to your Google&nbsp;Calendar</a>.</p>
+  <p class="iconic"><i class="fa fa-fw fa-plane"></i> Visiting Singapore? Check out <a href="https://github.com/rubysg/singapore">this amazing guide</a> prepared by the <a href="http://ruby.sg/">Singapore Ruby community</a>. Also check out <a href="https://webuild.sg/">We Build SG</a> for more cool events and&nbsp;people.</p>
 </div>
 
-<div class="wide-container">
+<div class="container" id="what-kopi">
+  <h2>What is Kopi?</h2>
+  <blockquote>
+    <p>The word <b>kopi</b> is a Malay/Hokkien term for&nbsp;coffee.</p>
+    <footer>— <a href="http://en.wikipedia.org/wiki/Kopi_tiam">Wikipedia: Kopi&nbsp;tiam</a></footer>
+  </blockquote>
+  <blockquote>
+    <p><b>Kopi</b> is a dark and full bodied brew, less bitter (and, you could argue, more aromatic) than Vietnamese versions, but with the same subtle caramel-sweetness that comes from canned condensed or evaporated&nbsp;milk.</p>
+    <footer>— <a href="http://drinks.seriouseats.com/2012/08/snapshots-from-singapore-a-guide-to-singaporean-coffee-kop-how-to-order-how-its-made.html">Snapshots from Singapore: A Guide to Singaporean&nbsp;Coffee</a></footer>
+  </blockquote>
+  <p class="iconic"><i class="fa fa-fw fa-coffee"></i> There is a whole range of Kopi terms and variations. You can customize them to your liking, such as type of milk, sweetness level and coffee&nbsp;strength.</p>
+</div>
+
+<div class="wide-container" id="kopi-variations">
   <ul id="kopi-legend" title="Legend">
     <li class="sugar">Sugar</li>
     <li class="water">Water</li>
     <li class="condensed_milk">Condensed milk</li>
     <li class="evaporated_milk">Evaporated milk</li>
     <li class="coffee">Coffee</li>
-    <li class="ice"><label><input type="checkbox" id="kopi-peng"> Ice</label></li>
+    <li class="state">
+      <label><input type="radio" name="kopi-state" id="kopi-state-1" value="warm" checked> Warm</label>
+      <label><input type="radio" name="kopi-state" id="kopi-state-2" value="lukewarm"> Lukewarm</label>
+      <label><input type="radio" name="kopi-state" id="kopi-state-3" value="iced"> Iced</label>
+    </li>
   </ul>
   <ul id="kopi-list">
     <li>Kopi</li>
     <li>Kopi O</li>
     <li>Kopi C</li>
-    <li>Kopi Kosong</li>
     <li>Kopi Gah Dai</li>
     <li>Kopi Siu Dai</li>
     <li>Kopi Po</li>
@@ -101,75 +77,9 @@
     <li>Kopi C Gah Dai</li>
     <li>Kopi O Siu Dai</li>
     <li>Kopi C Siu Dai</li>
-    <li>Kopi Po Kosong</li>
     <li>Kopi Po Gah Dai</li>
     <li>Kopi Po Siu Dai</li>
   </ul>
-</div>
-
-<div class="container">
-  <div class="content">
-    <h2>Documentation</h2>
-    <p>Kopi.js can do two important things:</p>
-    <ol>
-      <li>Accept a bunch of ingredients and generate the string for you.</li>
-      <li>Parse a Kopi order string and return the ingredients for you.</li>
-    </ol>
-    <p>Everything also for you. Nice <a href="http://www.urbandictionary.com/define.php?term=leh&defid=1691957">leh</a>.</p>
-    <h3><code>Kopi</code></h3>
-    <p><code>Kopi</code> is a singleton, like <code>JSON</code>. The methods available are also similar:</p>
-    <ul>
-      <li><code>Kopi.parse</code></li>
-      <li><code>Kopi.stringify</code></li>
-    </ul>
-    <h3><code>Kopi.parse</code></h3>
-    <pre><code>Kopi.parse('Kopi O');
-// return {water: 0.5, coffee: 0.5, condensed_milk: 0, evaporated_milk: 0, sugar: 0, ice: false}</code></pre>
-    <p>Ingredients:</p>
-    <ul>
-      <li><code>water</code> - number, default <code>1</code>, 0 to 1</li>
-      <li><code>coffee</code> - number, default <code>0</code>, 0 to 1</li>
-      <li><code>condensed_milk</code> (sweetened) - number, default <code>0</code>, 0 to 1</li>
-      <li><code>evaporated_milk</code> (unsweetened), number, default <code>0</code>, 0 to 1</li>
-      <li><code>sugar</code> - number, default <code>0</code>, 0 to infinite</li>
-      <li><code>ice</code> - boolean, default <code>false</code></li>
-    </ul>
-    <p>The sum of <code>water</code>, <code>coffee</code>, <code>condensed_milk</code> and <code>evaporated_milk</code> is always 1.</p>
-    <h3><code>Kopi.stringify</code></h3>
-    <pre><code>Kopi.stringify({water: .5, coffee: .5});
-// return 'Kopi O'</code></pre>
-    <p>That simple.</p>
-  </div>
-</div>
-
-<div class="wide-container" id="meetup-container">
-  <div class="content">
-    <h2>Meetups</h2>
-    <p>Kopi.JS is not just a JavaScript library, it also sparks off its own special meetup.</p>
-    <blockquote class="twitter-tweet" lang="en">
-      <p>Alrighty first <a href="https://twitter.com/hashtag/kopijs?src=hash">#kopijs</a> meetup success with <a href="https://twitter.com/chuyeow">@chuyeow</a> <a href="https://twitter.com/laktek">@laktek</a> <a href="https://twitter.com/soulofpeace">@soulofpeace</a></p>&mdash; Lim Chee Aun (@cheeaun)
-      <a href="https://twitter.com/cheeaun/status/406427812682158081">November 29, 2013</a>
-    </blockquote>
-    <p>Even all the way <a href="https://github.com/KopiJS/kopi.js/issues/8">from Singapore to San Francisco</a>.</p>
-    <blockquote class="twitter-tweet" lang="en">
-      <p>Alrighty, <a href="https://twitter.com/hashtag/kopijs?src=hash">#kopijs</a> meetup success today with <a href="https://twitter.com/wynlim">@wynlim</a> <a href="https://twitter.com/jasonong">@jasonong</a> <a href="https://twitter.com/chuyeow">@chuyeow</a> <a href="https://twitter.com/laktek">@laktek</a> @ctrlaltreboot <a href="https://twitter.com/dqminh">@dqminh</a> <a href="https://twitter.com/siong1987">@siong1987</a></p>&mdash; Lim Chee Aun (@cheeaun)
-      <a href="https://twitter.com/cheeaun/status/447594879233687552">March 23, 2014</a>
-    </blockquote>
-    <p>Unlike any meetups, KopiJS meetups are very casual and informal.</p>
-    <p>There are no talks, no speakers, no coding.</p>
-    <p>It's a gathering of like-minded people who are interested in JavaScript, Kopi and almost anything.</p>
-    <h3>Join us</h3>
-    <p>If you are in Singapore, feel free to join us and meet awesome people. If you're not in Singapore, feel free to fly to Singapore and join us. Either way, just join us and you won't regret.</p>
-    <p><a href="webcal://www.google.com/calendar/ical/dnhunu42fotmefouusg4j8ip0k%40group.calendar.google.com/public/basic.ics" class="btn btn-lg">Subscribe to our Kopi.JS meetup calendar</a></p>
-    <p><a href="http://www.google.com/calendar/render?cid=https%3A//www.google.com/calendar/ical/dnhunu42fotmefouusg4j8ip0k%40group.calendar.google.com/public/basic.ics" class="btn btn-lg">Or&hellip; subscribe in your Google Calendar</a></p>
-    <div id="next-meetup"></div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="content">
-    <p id="quote">Keep<br>Calm <small>and</small> Drink<br>Kopi</p>
-  </div>
 </div>
 
 <footer>
@@ -180,12 +90,12 @@
       <a href="https://twitter.com/kopi_js" class="twitter-follow-button" data-show-count="true">Follow @kopi_js</a>
       <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://kopijs.org/" data-via="kopi_js" data-related="kopi_js" data-hashtags="kopijs">Tweet</a>
     </p>
-    <p><a href="https://github.com/kopiJS/kopi.js/issues">Help improve KopiJS. Open an issue or pull request.</a></p>
-    <p>Designed and built by <a href="https://twitter.com/cheeaun">@cheeaun</a> and <a href="https://twitter.com/laktek">@laktek</a> with help of our <a href="https://github.com/KopiJS/kopi.js/graphs/contributors">contributors</a>.</p>
-    <p>Licensed under <a href="http://cheeaun.mit-license.org/">MIT</a>.</p>
+    <p>Designed and built by <a href="https://twitter.com/cheeaun">@cheeaun</a>. Accidentally <a href="https://medium.com/kopi-js-community/the-kopi-js-meetup-story-5ee2cd574678">started</a> by <a href="https://twitter.com/laktek">@laktek</a>. Special thanks to our <a href="https://github.com/KopiJS/kopi.js/graphs/contributors">contributors</a> and the&nbsp;community.</p>
+    <p>Licensed under <a href="http://cheeaun.mit-license.org/">MIT</a>. <a href="https://github.com/KopiJS/code-of-conduct">Code of&nbsp;Conduct</a>.</p>
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
 <script src="assets/kopi.min.js"></script>
 <script src="assets/kopijs.js"></script>
 <script async>
@@ -195,7 +105,7 @@ setTimeout(function(){
   s.src = '//platform.twitter.com/widgets.js';
   s.charset = 'utf-8';
   document.body.appendChild(s);
-}, 50);
+}, 1000);
 // Insert GitHub buttons
 setTimeout(function(){
   var ghbtns = document.querySelectorAll('.ghbtn');
@@ -213,7 +123,7 @@ setTimeout(function(){
     iframe.height = 20;
     ghbtn.parentNode.replaceChild(iframe, ghbtn);
   }
-}, 100);
+}, 1000);
 </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
