@@ -1,7 +1,7 @@
 kopijs.org
 ===
 
-Static landing page for KopiJS, served with GitHub Pages.
+Static landing page for Kopi.JS, served with GitHub Pages.
 
 Development
 ---
@@ -14,7 +14,7 @@ Voice
 
 This site has two main audiences:
 
-1. People who want to learn how to order Kopi.
-2. People who want to code with Kopi.JS.
+1. People who want to know more about the meetup and attend it.
+2. People who want to learn how to order Kopi.
 
 This will be a little confusing but at least not as confusing as ordering Kopi, right?
