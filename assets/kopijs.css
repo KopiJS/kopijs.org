@@ -1,5 +1,5 @@
 html, body{
-  font-family: Merriweather, 'times new roman', times, serif;
+  font-family: Merriweather, georgia, 'times new roman', times, serif;
   margin: 0;
   padding: 0;
   font-size: 18px;
@@ -126,16 +126,20 @@ body>footer{
 
 #social-buttons{
   text-align: center;
+  word-spacing: 8px;
+  margin-bottom: 40px;
 }
 #social-buttons a{
-  font-size: 40px;
-  border-bottom: 0;
-  color: #956f5a;
-  -webkit-transition: color .3s;
-  transition: color .3s;
+  font-size: 20px;
+  color: #555;
+  padding: 8px;
+  border-radius: 50%;
+  border: 2px solid #e9ddd7;
+  -webkit-transition: border-color .3s;
+  transition: border-color .3s;
 }
 #social-buttons a:hover{
-  color: #6e4228;
+  border-color: #6e4228;
 }
 
 #next-meetup{
