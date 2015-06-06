@@ -2,7 +2,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kopi.JS &ndash; a casual meetup for developers and designers in Singapore</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="assets/kopijs.css">
 <meta property="og:url" content="http://kopijs.org/">
 <meta property="og:title" content="Kopi.JS">
@@ -100,7 +99,17 @@
 <script src="assets/kopijs.js"></script>
 <script>
 WebFontConfig = {
-  google: { families: [ 'Khula:400,700:latin', 'Merriweather:400,400italic,700,700italic:latin' ] }
+  custom: {
+    families: [
+      'Khula:400,700:latin',
+      'Merriweather:400,400italic,700,700italic:latin',
+      'FontAwesome'
+    ],
+    urls: [
+      'https://fonts.googleapis.com/css?family=Khula:400,700%7CMerriweather:400,400italic,700,700italic&subset=latin,latin',
+      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css'
+    ]
+  }
 };
 (function() {
   var wf = document.createElement('script');
