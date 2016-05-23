@@ -14,13 +14,9 @@ body{
 a{
   color: #6e4228;
   text-decoration: none;
-  border-bottom: 2px solid #e9ddd7;
-  -webkit-transition: border-bottom-color .3s;
-  transition: border-bottom-color .3s;
-}
-a:hover{
-  border-bottom-color: #6e4228;
-  text-decoration: none;
+  border-bottom: 1px solid #6e4228;
+  -webkit-transition: border-color .3s;
+  transition: border-color .3s;
 }
 
 h1, h2{
@@ -80,17 +76,6 @@ header h1{
   letter-spacing: -3px;
 }
 
-#top-nav{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  line-height: 1.75em;
-}
-#top-nav .fa{
-  font-size: 90%;
-  opacity: .8;
-}
-
 .container{
   margin: auto;
   max-width: 680px;
@@ -142,22 +127,20 @@ body>footer{
   border-color: #6e4228;
 }
 
-#next-meetup{
-  margin-left: -10px;
-}
 #next-meetup h3{
   margin-top: 0;
 }
 #next-meetup a{
   display: block;
-  background-color: #eee;
+  border: 5px solid #e9ddd7;
+  background-color: #fff;
   position: relative;
-  border-bottom: 0;
   padding: 20px;
   box-sizing: border-box;
 }
 #next-meetup a:hover{
   color: #201816;
+  border-color: #6e4228;
 }
 #next-meetup iframe{
   background-color: #eee;
@@ -401,14 +384,6 @@ body>footer{
   header img{
     float: right;
     margin: -20px 0 0 20px;
-  }
-
-  #top-nav{
-    letter-spacing: 1em;
-  }
-  #top-nav li{
-    display: inline-block;
-    letter-spacing: normal;
   }
 
   #next-meetup{
