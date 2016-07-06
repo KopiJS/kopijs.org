@@ -20,68 +20,99 @@
   for (var i=0, l=$kopis.length; i<l; i++){
     var $kopi = $kopis[i];
     var name = $kopi.textContent;
-
-    // Magic happens from Kopi.js
-    var ingredients = Kopi.parse(name);
-
-    // Configure the internal ingredients of the Kopi
-    var internalIngredients = 'water condensed_milk evaporated_milk coffee'.split(' ');
-    var internalIngredientsHTML = internalIngredients.map(function(ingredient){
-      var value = ingredients[ingredient];
-      if (!value) return;
-      var height = value * 100 + '%';
-      return '<div class="' + ingredient + '" style="height: ' + height + '"></div>';
-    }).join('');
-
-    // Render the sugar intelligently
-    var sugarHTML = '';
-    if (ingredients.sugar > 0){
-      if (ingredients.sugar <= 0.5){
-        sugarHTML = '<div class="sugar"></div>';
-      } else if (ingredients.sugar <= 1){
-        sugarHTML = '<div class="sugar sugar-double"></div>';
-      } else {
-        sugarHTML = '<div class="sugar sugar-triple"></div>';
-      }
-    }
-
-    // Render the (random) ice(s)
-    var randDeg = function(){
-      // Returns -90 to 90 deg
-      return (Math.random()*180).toFixed() - 90;
-    };
-    var randLeft = function(){
-      // Returns 8 to 26
-      return (Math.random()*18 + 8).toFixed();
-    };
-    iceHTML = '<div class="ice-blocks">'
-        + '<div class="ice" style="transform: rotate(' + randDeg() + 'deg); -webkit-transform: rotate(' + randDeg() + 'deg); left: ' + randLeft() + 'px"></div>'
-        + '<div class="ice" style="transform: rotate(' + randDeg() + 'deg); -webkit-transform: rotate(' + randDeg() + 'deg); left: ' + randLeft() + 'px"></div>'
-        + '<div class="ice" style="transform: rotate(' + randDeg() + 'deg); -webkit-transform: rotate(' + randDeg() + 'deg); left: ' + randLeft() + 'px"></div>'
-      + '</div>';
-
-    var state = ingredients.state;
-    ingredients.state = 'lukewarm';
-    var lukewarmName = Kopi.stringify(ingredients);
-    ingredients.state = 'iced';
-    var icedName = Kopi.stringify(ingredients);
-
-    // Finally render the whole Kopi in its full glory
-    var html = '<div class="kopi kopi-' + state + '">'
-        + sugarHTML
-        + '<div class="cup">'
-          + '<div class="ingredients">' + internalIngredientsHTML + '</div>'
-          + iceHTML
-        + '</div>'
-        + '<div class="plate"></div>'
-      + '</div>'
-      + '<div class="kopi-name">'
-        + '<span class="kopi-warm-name">' + name + '</span>'
-        + '<span class="kopi-lukewarm-name">' + lukewarmName + '</span>'
-        + '<span class="kopi-iced-name">' + icedName + '</span>'
-      + '</div>';
-    $kopi.innerHTML = html;
+    makeKopi($kopi, name);
   }
+
+  function makeKopi($kopi, name, ingredients){
+
+      // Magic happens from Kopi.js
+      if(!ingredients) {
+          var ingredients = Kopi.parse(name);
+      }else if(!name){
+          var name = Kopi.stringify(ingredients);
+      }
+      // Configure the internal ingredients of the Kopi
+      var internalIngredients = 'water condensed_milk evaporated_milk coffee'.split(' ');
+      var internalIngredientsHTML = internalIngredients.map(function(ingredient){
+        var value = ingredients[ingredient];
+        if (!value) return;
+        var height = value * 100 + '%';
+        return '<div class="' + ingredient + '" style="height: ' + height + '"></div>';
+      }).join('');
+
+      // Render the sugar intelligently
+      var sugarHTML = '';
+      if (ingredients.sugar > 0){
+        if (ingredients.sugar <= 0.5){
+          sugarHTML = '<div class="sugar"></div>';
+        } else if (ingredients.sugar <= 1){
+          sugarHTML = '<div class="sugar sugar-double"></div>';
+        } else {
+          sugarHTML = '<div class="sugar sugar-triple"></div>';
+        }
+      }
+
+      // Render the (random) ice(s)
+      var randDeg = function(){
+        // Returns -90 to 90 deg
+        return (Math.random()*180).toFixed() - 90;
+      };
+      var randLeft = function(){
+        // Returns 8 to 26
+        return (Math.random()*18 + 8).toFixed();
+      };
+      iceHTML = '<div class="ice-blocks">'
+          + '<div class="ice" style="transform: rotate(' + randDeg() + 'deg); -webkit-transform: rotate(' + randDeg() + 'deg); left: ' + randLeft() + 'px"></div>'
+          + '<div class="ice" style="transform: rotate(' + randDeg() + 'deg); -webkit-transform: rotate(' + randDeg() + 'deg); left: ' + randLeft() + 'px"></div>'
+          + '<div class="ice" style="transform: rotate(' + randDeg() + 'deg); -webkit-transform: rotate(' + randDeg() + 'deg); left: ' + randLeft() + 'px"></div>'
+        + '</div>';
+
+      var state = ingredients.state;
+      ingredients.state = 'lukewarm';
+      var lukewarmName = Kopi.stringify(ingredients);
+      ingredients.state = 'iced';
+      var icedName = Kopi.stringify(ingredients);
+
+      // Finally render the whole Kopi in its full glory
+      var html = '<div class="kopi kopi-' + state + '">'
+          + sugarHTML
+          + '<div class="cup">'
+            + '<div class="ingredients">' + internalIngredientsHTML + '</div>'
+            + iceHTML
+          + '</div>'
+          + '<div class="plate"></div>'
+        + '</div>'
+        + '<div class="kopi-name">'
+          + '<span class="kopi-warm-name">' + name + '</span>'
+          + '<span class="kopi-lukewarm-name">' + lukewarmName + '</span>'
+          + '<span class="kopi-iced-name">' + icedName + '</span>'
+        + '</div>';
+      $kopi.innerHTML = html;
+  }
+
+  //Make your own kopi
+  document.getElementById('recipe').addEventListener('submit', function(){
+      event.preventDefault();
+      var $water = this.elements.namedItem('water').value;
+      var $coffee = this.elements.namedItem('coffee').value;
+      var $sugar = this.elements.namedItem('sugar').value;
+      var $condensedMilk = this.elements.namedItem('condensed_milk').value;
+      var $evaporatedMilk = this.elements.namedItem('evaporated_milk').value;
+      var $state = this.elements.namedItem('state').value;
+      if($water+$coffee+$sugar+$condensedMilk+$evaporatedMilk !== 1) return alert("Your ingredients are invalid!");
+      var $ownKopi = document.getElementById('your-kopi');
+      $ownKopi.className = "";
+      $ownKopi.className += $state;
+      makeKopi($ownKopi, null, {
+          water: $water,
+          coffee: $coffee,
+          sugar: $sugar,
+          condensed_milk: $condensedMilk,
+          evaporated_milk: $evaporatedMilk,
+          state: $state
+      });
+  })
+
 
   // Check for our next meetup
   var xhr = new XMLHttpRequest();
