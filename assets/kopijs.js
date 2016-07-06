@@ -93,12 +93,13 @@
   //Make your own kopi
   document.getElementById('recipe').addEventListener('submit', function(){
       event.preventDefault();
-      var $water = this.elements.namedItem('water').value;
-      var $coffee = this.elements.namedItem('coffee').value;
-      var $sugar = this.elements.namedItem('sugar').value;
-      var $condensedMilk = this.elements.namedItem('condensed_milk').value;
-      var $evaporatedMilk = this.elements.namedItem('evaporated_milk').value;
+      var $water = Number(this.elements.namedItem('water').value);
+      var $coffee = Number(this.elements.namedItem('coffee').value);
+      var $sugar = Number(this.elements.namedItem('sugar').value);
+      var $condensedMilk = Number(this.elements.namedItem('condensed_milk').value);
+      var $evaporatedMilk = Number(this.elements.namedItem('evaporated_milk').value);
       var $state = this.elements.namedItem('state').value;
+      alert($water+$coffee+$sugar+$condensedMilk+$evaporatedMilk);
       if($water+$coffee+$sugar+$condensedMilk+$evaporatedMilk !== 1) return alert("Your ingredients are invalid!");
       var $ownKopi = document.getElementById('your-kopi');
       $ownKopi.className = "";
