@@ -26,9 +26,9 @@
   function makeKopi($kopi, name, ingredients){
 
       // Magic happens from Kopi.js
-      if(!ingredients) {
+      if (!ingredients) {
           var ingredients = Kopi.parse(name);
-      }else if(!name){
+      } else if (!name) {
           var name = Kopi.stringify(ingredients);
       }
       // Configure the internal ingredients of the Kopi
@@ -93,7 +93,7 @@
   //Make your own kopi
   var $recipe = document.querySelectorAll('#recipe > input');
   var $ownKopi = document.getElementById('your-kopi');
-  $ownKopi.className = "warm";
+  $ownKopi.className = 'warm';
   makeKopi($ownKopi, null, {water: 0.4, coffee: 0.4, condensed_milk: 0.2, state: "warm"});
   //indication of amount
   for(var i = 0; i<5; i++){
@@ -104,11 +104,11 @@
   //render kopi
   for(var i = 0; i<$recipe.length; i++){
       $recipe[i].addEventListener('change', function(){
-          var $water = Number(this.parentElement.water.value);
-          var $coffee = Number(this.parentElement.coffee.value);
-          var $sugar = Number(this.parentElement.sugar.value);
-          var $condensedMilk = Number(this.parentElement.condensed_milk.value);
-          var $evaporatedMilk = Number(this.parentElement.evaporated_milk.value);
+          var $water = parseFloat(this.parentElement.water.value);
+          var $coffee = parseFloat(this.parentElement.coffee.value);
+          var $sugar = parseFloat(this.parentElement.sugar.value);
+          var $condensedMilk = parseFloat(this.parentElement.condensed_milk.value);
+          var $evaporatedMilk = parseFloat(this.parentElement.evaporated_milk.value);
           var $state = this.parentElement.state.value;
           if($water+$coffee+$sugar+$condensedMilk+$evaporatedMilk !== 1) return document.getElementById('your-kopi').innerHTML = "<li></li>";
           $ownKopi.className = "";
@@ -123,7 +123,6 @@
           });
       })
   }
-
 
   // Check for our next meetup
   var xhr = new XMLHttpRequest();
