@@ -91,38 +91,35 @@
   }
 
   //Make your own kopi
-  var $recipe = document.querySelectorAll('#recipe > input');
+  var $recipe = document.getElementById('recipe');
   var $ownKopi = document.getElementById('your-kopi');
   $ownKopi.className = 'warm';
   makeKopi($ownKopi, null, {water: 0.4, coffee: 0.4, condensed_milk: 0.2, state: "warm"});
   //indication of amount
-  for(var i = 0; i<5; i++){
-      $recipe[i].addEventListener('input', function(){
-          this.nextSibling.innerHTML = this.value;
-      })
-  }
+  $recipe.addEventListener('input', function(event){
+      var $status = this.querySelector('span[for=' + event.target.name + ']');
+      $status.innerHTML = event.target.value;
+  })
   //render kopi
-  for(var i = 0; i<$recipe.length; i++){
-      $recipe[i].addEventListener('change', function(){
-          var $water = parseFloat(this.parentElement.water.value);
-          var $coffee = parseFloat(this.parentElement.coffee.value);
-          var $sugar = parseFloat(this.parentElement.sugar.value);
-          var $condensedMilk = parseFloat(this.parentElement.condensed_milk.value);
-          var $evaporatedMilk = parseFloat(this.parentElement.evaporated_milk.value);
-          var $state = this.parentElement.state.value;
-          if($water+$coffee+$sugar+$condensedMilk+$evaporatedMilk !== 1) return document.getElementById('your-kopi').innerHTML = '';
-          $ownKopi.className = '';
-          $ownKopi.className += $state;
-          makeKopi($ownKopi, null, {
-              water: $water,
-              coffee: $coffee,
-              sugar: $sugar,
-              condensed_milk: $condensedMilk,
-              evaporated_milk: $evaporatedMilk,
-              state: $state
-          });
-      })
-  }
+  $recipe.addEventListener('change', function(event){
+      var $target = event.target
+      var $water = parseFloat($target.parentElement.water.value);
+      var $coffee = parseFloat($target.parentElement.coffee.value);
+      var $sugar = parseFloat($target.parentElement.sugar.value);
+      var $condensedMilk = parseFloat($target.parentElement.condensed_milk.value);
+      var $evaporatedMilk = parseFloat($target.parentElement.evaporated_milk.value);
+      var $state = $target.parentElement.state.value;
+      if($water+$coffee+$sugar+$condensedMilk+$evaporatedMilk !== 1) return document.getElementById('your-kopi').innerHTML = '';
+      $ownKopi.className = $state;
+      makeKopi($ownKopi, null, {
+          water: $water,
+          coffee: $coffee,
+          sugar: $sugar,
+          condensed_milk: $condensedMilk,
+          evaporated_milk: $evaporatedMilk,
+          state: $state
+      });
+  })
 
   // Check for our next meetup
   var xhr = new XMLHttpRequest();
