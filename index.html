@@ -75,28 +75,26 @@
     <li>Kopi Po Gah Dai</li>
     <li>Kopi Po Siu Dai</li>
   </ul>
-  <div id='make-own-kopi'>
-      <p>Make your own Kopi</p>
-      <p>(the sum of all ingredients must equal 1)</p>
-      <form id='recipe'>
-          <label> water</label>
-          <input type='number' name='water' max='1' min='0' step="0.1" value='0' required><br>
-          <label>coffee</label>
-          <input type='number' name='coffee' max='1' min='0' step="0.1" value='0' required><br>
-          <label>sugar</label>
-          <input type='number' name='sugar' max='1' min='0' step="0.1" value='0' required><br>
-          <label>condensed milk</label>
-          <input type='number' name='condensed_milk' max='1' min='0' step="0.1" value='0' required><br>
-          <label>evaporated milk</label>
-          <input type='number' name='evaporated_milk' max='1' min='0' step="0.1" value='0' required><br>
-          <label><input type="radio" name='state' value="warm" checked> Warm</label>
-          <label><input type="radio" name='state' value="lukewarm"> Lukewarm</label>
-          <label><input type="radio" name='state' value="iced"> Iced</label>
-          <br>
-          <button type='submit'>Make Kopi</button>
-      </form>
-      <ul id='your-kopi'><li></li></ul>
-  </div>
+</div>
+<div class='wide-container' id='make-own-kopi'>
+    <p>Make your own Kopi</p>
+    <p>(the sum of all ingredients must equal 1)</p>
+    <form id='recipe'>
+        <label style='padding-right:55px;'>water</label>
+        <input type='range' name='water' max='1' min='0' step="0.1" value='0.4' required><span>0.4</span><br/>
+        <label style='padding-right:55px;'>coffee</label>
+        <input type='range' name='coffee' max='1' min='0' step="0.1" value='0.4' required><span>0.4</span><br/>
+        <label style='padding-right:55px;'>sugar</label>
+        <input type='range' name='sugar' max='1' min='0' step="0.1" value='0' required><span>0</span><br/>
+        <label>condensed milk</label>
+        <input type='range' name='condensed_milk' max='1' min='0' step="0.1" value='0.2' required><span>0.2</span><br/>
+        <label>evaporated milk</label>
+        <input type='range' name='evaporated_milk' max='1' min='0' step="0.1" value='0' required><span>0</span><br/>
+        <input type="radio" name='state' value="warm" checked><label> Warm</label>
+        <input type="radio" name='state' value="lukewarm"><label> Lukewarm</label>
+        <input type="radio" name='state' value="iced"><label> Iced</label>
+    </form>
+    <ul id='your-kopi'><li></li></ul>
 </div>
 
 <footer>

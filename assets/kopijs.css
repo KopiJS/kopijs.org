@@ -424,6 +424,7 @@ body>footer{
     padding: 0 10px;
     text-align: center;
     color: #fff;
+    background: linear-gradient(to bottom, #6e4228 50%, #956f5a 100%);
 }
 
 #make-own-kopi p:nth-child(2){
@@ -438,6 +439,10 @@ body>footer{
 }
 
 #recipe label {
+    font-size: 12px;
+}
+
+#recipe span {
     font-size: 12px;
 }
 
