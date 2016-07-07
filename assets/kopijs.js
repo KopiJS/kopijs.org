@@ -110,8 +110,8 @@
           var $condensedMilk = parseFloat(this.parentElement.condensed_milk.value);
           var $evaporatedMilk = parseFloat(this.parentElement.evaporated_milk.value);
           var $state = this.parentElement.state.value;
-          if($water+$coffee+$sugar+$condensedMilk+$evaporatedMilk !== 1) return document.getElementById('your-kopi').innerHTML = "<li></li>";
-          $ownKopi.className = "";
+          if($water+$coffee+$sugar+$condensedMilk+$evaporatedMilk !== 1) return document.getElementById('your-kopi').innerHTML = '';
+          $ownKopi.className = '';
           $ownKopi.className += $state;
           makeKopi($ownKopi, null, {
               water: $water,
