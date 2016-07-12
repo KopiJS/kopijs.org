@@ -20,7 +20,10 @@
   for (var i=0, l=$kopis.length; i<l; i++){
     var $kopi = $kopis[i];
     var name = $kopi.textContent;
+    $kopi.innerHTML = makeKopi(name);
+  }
 
+  function makeKopi(name){
     // Magic happens from Kopi.js
     var ingredients = Kopi.parse(name);
 
@@ -80,7 +83,36 @@
         + '<span class="kopi-lukewarm-name">' + lukewarmName + '</span>'
         + '<span class="kopi-iced-name">' + icedName + '</span>'
       + '</div>';
-    $kopi.innerHTML = html;
+    return html;
+  }
+
+  // Kopi maker
+  var $makerItem = document.getElementById('maker-item');
+  var $makerForm = document.getElementById('maker-form');
+  var $makerName = document.getElementById('maker-name');
+  function renderKopi(){
+    var kopiName = ['kopi_milkiness', 'kopi_strength', 'kopi_sweetness', 'kopi_state'].map(function(name){
+      return $makerForm[name].value;
+    }).join(' ').trim();
+    var kopiHTML;
+    try {
+      kopiHTML = makeKopi(kopiName);
+      $makerName.innerHTML = kopiName;
+    } catch (e) {
+      kopiHTML = e.message;
+      $makerName.innerHTML = 'Kopi ???';
+    }
+    $makerItem.innerHTML = kopiHTML;
+  };
+  renderKopi();
+  $makerForm.onsubmit = $makerForm.oninput = $makerForm.onchange = function(e){
+    e.preventDefault();
+    setTimeout(renderKopi, 100);
+    if ($makerItem.scrollIntoViewIfNeeded){
+      $makerItem.scrollIntoViewIfNeeded();
+    } else {
+      $makerItem.scrollIntoView();
+    }
   }
 
   // Check for our next meetup

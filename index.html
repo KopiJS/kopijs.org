@@ -52,9 +52,9 @@
     <li class="evaporated_milk">Evaporated milk</li>
     <li class="coffee">Coffee</li>
     <li class="state">
-      <label><input type="radio" name="kopi-state" id="kopi-state-1" value="warm" checked> Warm</label>
-      <label><input type="radio" name="kopi-state" id="kopi-state-2" value="lukewarm"> Lukewarm</label>
-      <label><input type="radio" name="kopi-state" id="kopi-state-3" value="iced"> Iced</label>
+      <label><input type="radio" name="kopi_state" id="kopi-state-1" value="warm" checked> Warm</label>
+      <label><input type="radio" name="kopi_state" id="kopi-state-2" value="lukewarm"> Lukewarm</label>
+      <label><input type="radio" name="kopi_state" id="kopi-state-3" value="iced"> Iced</label>
     </li>
   </ul>
   <ul id="kopi-list">
@@ -76,6 +76,56 @@
     <li>Kopi Po Siu Dai</li>
   </ul>
 </div>
+<div class="container" id="kopi-maker">
+  <h2>Kopi Maker <a href="#kopi-maker" title="Permalink to Kopi Maker">#</a></h2>
+  <p>Confused? Why not make your own Kopi?!</p>
+  <div id="maker-container">
+    <div id="maker-item"></div>
+    <div id="maker-name"></div>
+  </div>
+  <form id="maker-form">
+    <fieldset>
+      <legend>Milkiness</legend>
+      <input type="radio" name="kopi_milkiness" value="Kopi O" id="km-no-milk">
+      <label for="km-no-milk">No milk</label>
+      <input type="radio" name="kopi_milkiness" value="Kopi" id="km-condensed" checked>
+      <label for="km-condensed">Condensed milk</label>
+      <input type="radio" name="kopi_milkiness" value="Kopi C" id="km-evaporated">
+      <label for="km-evaporated">Evaporated milk</label>
+    </fieldset>
+    <fieldset>
+      <legend>Strength</legend>
+      <input type="radio" name="kopi_strength" value="Po" id="ks-weak">
+      <label for="ks-weak">Weak</label>
+      <input type="radio" name="kopi_strength" value="" id="ks-normal-2" checked>
+      <label for="ks-normal-2">Normal</label>
+      <input type="radio" name="kopi_strength" value="Gau" id="ks-strong">
+      <label for="ks-strong">Strong</label>
+      <input type="radio" name="kopi_strength" value="Di Lo" id="ks-stronger">
+      <label for="ks-stronger">Stronger (no water)</label>
+    </fieldset>
+    <fieldset>
+      <legend>Sweetness</legend>
+      <input type="radio" name="kopi_sweetness" value="Kosong" id="ks-no-sugar">
+      <label for="ks-no-sugar">No sugar</label>
+      <input type="radio" name="kopi_sweetness" value="Siu Dai" id="ks-less-sweet">
+      <label for="ks-less-sweet">Less sweet</label>
+      <input type="radio" name="kopi_sweetness" value="" id="ks-normal-1" checked>
+      <label for="ks-normal-1">Normal</label>
+      <input type="radio" name="kopi_sweetness" value="Gah Dai" id="ks-sweeter">
+      <label for="ks-sweeter">Sweeter</label>
+    </fieldset>
+    <fieldset>
+      <legend>State</legend>
+      <input type="radio" name="kopi_state" value="" id="ks-warm" checked>
+      <label for="ks-warm">Warm</label>
+      <input type="radio" name="kopi_state" value="Pua Sio" id="ks-lukewarm">
+      <label for="ks-lukewarm">Lukewarm</label>
+      <input type="radio" name="kopi_state" value="Peng" id="ks-iced">
+      <label for="ks-iced">Iced</label>
+    </fieldset>
+  </form>
+</div>
 
 <footer>
   <div class="container">
@@ -92,7 +142,7 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
 <script src="assets/kopi.min.js"></script>
 <script src="assets/kopijs.js"></script>
 <script>
@@ -105,7 +155,7 @@ WebFontConfig = {
     ],
     urls: [
       'https://fonts.googleapis.com/css?family=Khula:400,700%7CMerriweather:400,400italic,700,700italic&subset=latin,latin',
-      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css'
+      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'
     ]
   }
 };
