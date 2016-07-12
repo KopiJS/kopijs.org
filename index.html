@@ -52,9 +52,9 @@
     <li class="evaporated_milk">Evaporated milk</li>
     <li class="coffee">Coffee</li>
     <li class="state">
-      <label><input type="radio" name="kopi-state" id="kopi-state-1" value="warm" checked> Warm</label>
-      <label><input type="radio" name="kopi-state" id="kopi-state-2" value="lukewarm"> Lukewarm</label>
-      <label><input type="radio" name="kopi-state" id="kopi-state-3" value="iced"> Iced</label>
+      <label><input type="radio" name="kopi_state" id="kopi-state-1" value="warm" checked> Warm</label>
+      <label><input type="radio" name="kopi_state" id="kopi-state-2" value="lukewarm"> Lukewarm</label>
+      <label><input type="radio" name="kopi_state" id="kopi-state-3" value="iced"> Iced</label>
     </li>
   </ul>
   <ul id="kopi-list">
@@ -76,25 +76,55 @@
     <li>Kopi Po Siu Dai</li>
   </ul>
 </div>
-<div class="wide-container" id="make-own-kopi">
-    <p>Make your own Kopi</p>
-    <p>(the sum of all ingredients must equal 1)</p>
-    <form id="recipe">
-        <label style="padding-right:55px;">water</label>
-        <input type="range" name="water" max="1" min="0" step="0.1" value="0.4" required><span id="water">0.4</span><br/>
-        <label style="padding-right:55px;">coffee</label>
-        <input type="range" name="coffee" max="1" min="0" step="0.1" value="0.4" required><span id="coffee">0.4</span><br/>
-        <label style='padding-right:55px;'>sugar</label>
-        <input type="range" name="sugar" max="1" min="0" step="0.1" value="0" required><span id="sugar">0</span><br/>
-        <label>condensed milk</label>
-        <input type="range" name="condensed_milk" max="1" min="0" step="0.1" value="0.2" required><span id="condensed_milk">0.2</span><br/>
-        <label>evaporated milk</label>
-        <input type="range" name="evaporated_milk" max="1" min="0" step="0.1" value="0" required><span id="evaporated_milk">0</span><br/>
-        <input type="radio" name="state" value="warm" checked><label> Warm</label>
-        <input type="radio" name="state" value="lukewarm"><label> Lukewarm</label>
-        <input type="radio" name="state" value="iced"><label> Iced</label>
-    </form>
-    <div id='your-kopi'></div>
+<div class="container" id="kopi-maker">
+  <h2>Kopi Maker <a href="#kopi-maker" title="Permalink to Kopi Maker">#</a></h2>
+  <p>Confused? Why not make your own Kopi?!</p>
+  <div id="maker-container">
+    <div id="maker-item"></div>
+    <div id="maker-name"></div>
+  </div>
+  <form id="maker-form">
+    <fieldset>
+      <legend>Milkiness</legend>
+      <input type="radio" name="kopi_milkiness" value="Kopi O" id="km-no-milk">
+      <label for="km-no-milk">No milk</label>
+      <input type="radio" name="kopi_milkiness" value="Kopi" id="km-condensed" checked>
+      <label for="km-condensed">Condensed milk</label>
+      <input type="radio" name="kopi_milkiness" value="Kopi C" id="km-evaporated">
+      <label for="km-evaporated">Evaporated milk</label>
+    </fieldset>
+    <fieldset>
+      <legend>Strength</legend>
+      <input type="radio" name="kopi_strength" value="Po" id="ks-weak">
+      <label for="ks-weak">Weak</label>
+      <input type="radio" name="kopi_strength" value="" id="ks-normal-2" checked>
+      <label for="ks-normal-2">Normal</label>
+      <input type="radio" name="kopi_strength" value="Gau" id="ks-strong">
+      <label for="ks-strong">Strong</label>
+      <input type="radio" name="kopi_strength" value="Di Lo" id="ks-stronger">
+      <label for="ks-stronger">Stronger (no water)</label>
+    </fieldset>
+    <fieldset>
+      <legend>Sweetness</legend>
+      <input type="radio" name="kopi_sweetness" value="Kosong" id="ks-no-sugar">
+      <label for="ks-no-sugar">No sugar</label>
+      <input type="radio" name="kopi_sweetness" value="Siu Dai" id="ks-less-sweet">
+      <label for="ks-less-sweet">Less sweet</label>
+      <input type="radio" name="kopi_sweetness" value="" id="ks-normal-1" checked>
+      <label for="ks-normal-1">Normal</label>
+      <input type="radio" name="kopi_sweetness" value="Gah Dai" id="ks-sweeter">
+      <label for="ks-sweeter">Sweeter</label>
+    </fieldset>
+    <fieldset>
+      <legend>State</legend>
+      <input type="radio" name="kopi_state" value="" id="ks-warm" checked>
+      <label for="ks-warm">Warm</label>
+      <input type="radio" name="kopi_state" value="Pua Sio" id="ks-lukewarm">
+      <label for="ks-lukewarm">Lukewarm</label>
+      <input type="radio" name="kopi_state" value="Peng" id="ks-iced">
+      <label for="ks-iced">Iced</label>
+    </fieldset>
+  </form>
 </div>
 
 <footer>
