@@ -140,6 +140,13 @@
         html += '<iframe width="100%" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=' + encodeURIComponent(firstEvent.location) + '&key=' + apiKey + '"></iframe>';
       }
       $nextMeetup.innerHTML = html;
+
+      // Make sure scroll to anchor works
+      if (location.hash.slice(1) == 'kopi-maker'){
+        setTimeout(function(){
+          document.getElementById('kopi-maker').scrollIntoView();
+        }, 100);
+      }
     } catch(e){}
   };
   xhr.send();
