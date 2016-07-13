@@ -92,7 +92,7 @@
   var $makerName = document.getElementById('maker-name');
   function renderKopi(){
     var kopiName = ['kopi_milkiness', 'kopi_strength', 'kopi_sweetness', 'kopi_state'].map(function(name){
-      return $makerForm[name].value;
+      return $makerForm[name].value || $makerForm.querySelector('[name=' + name + ']:checked').value;
     }).join(' ').trim();
     var kopiHTML;
     try {
