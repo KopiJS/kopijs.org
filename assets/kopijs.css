@@ -110,6 +110,37 @@ body>footer{
   font-size: 80%;
 }
 
+#email-form{
+  border: 2px solid #e9ddd7;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+}
+
+#email-form input{
+  border: 2px solid #6e4228;
+  border-radius: 5px;
+  padding: 3px 7px;
+  margin-bottom: 5px;
+  font: inherit;
+}
+#email form input[type=email]{
+  min-width: 20em;
+  max-width: 80%;
+}
+#email-form input[type=submit]{
+  background-color: #6e4228;
+  color: #fff;
+  padding: 3px 15px;
+}
+#email-form input[type=submit]:hover{
+  opacity: .75;
+}
+#email-form input[type=submit]:active{
+  opacity: 1;
+}
+
 #social-buttons{
   text-align: center;
   word-spacing: 8px;
