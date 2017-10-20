@@ -1,0 +1,18 @@
+{
+  "name": "kopijs.org",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The official website https://kopijs.http2.live/",
+  "main": "index.js",
+  "scripts": {
+    "preview": "http2server start --root public --config http2live.conf.development.js --open",
+    "deploy": "http2live deploy --root public --config http2live.conf.production.js"
+  },
+  "repository": "github:KopiJS/kopijs.org",
+  "author": "Lim Chee Aun",
+  "license": "MIT",
+  "dependencies": {
+    "@http2/live": "^1.2.1",
+    "@http2/server": "^4.2.2"
+  }
+}
