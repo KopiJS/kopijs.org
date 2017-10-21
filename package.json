@@ -2,7 +2,7 @@
   "name": "kopijs.org",
   "version": "1.0.0",
   "private": true,
-  "description": "The official website https://kopijs.http2.live/",
+  "description": "The official website https://kopijs.org/",
   "main": "index.js",
   "scripts": {
     "preview": "http2server start --root public --config http2live.conf.development.js --open",
