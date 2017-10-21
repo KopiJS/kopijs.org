@@ -523,6 +523,8 @@ body>footer{
     overflow: hidden;
     border-radius: 7px;
     margin-left: 0;
+    display: flex;
+    align-items: stretch;
   }
   #next-meetup a{
     width: 50%;
@@ -531,6 +533,8 @@ body>footer{
   }
   #next-meetup iframe{
     width: 50%;
+    height: auto;
+    min-height: 300px;
   }
 
   #maker-container{
