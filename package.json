@@ -5,7 +5,7 @@
   "description": "The official website https://kopijs.http2.live/",
   "main": "index.js",
   "scripts": {
-    "preview": "http2server start --root public --config http2live.conf.development.js --open",
+    "dev": "http2server start --root public --config http2live.conf.development.js --open",
     "deploy": "http2live deploy --root public --config http2live.conf.production.js"
   },
   "repository": "github:KopiJS/kopijs.org",

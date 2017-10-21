@@ -1,20 +1,15 @@
 kopijs.org
 ===
 
-Static landing page for Kopi.JS, served with GitHub Pages.
+Static landing page for Kopi.JS, served with [Http2live](https://http2.live/).
 
 Development
 ---
 
-1. Run a local HTTP server, e.g.: [http2server](https://www.npmjs.com/package/http2server)
-
-2. Load the page in the browser.
-
-```bash
-# One-off invocation without local installation
-npx --node-arg=--expose-http2 http2server -- start --open
-```
 > Note: Requires Node.js v8.6.0+
+
+- `npm run dev` - Run a local server with ([http2server](https://www.npmjs.com/package/http2server))
+- `npm run deploy` - Deploy the app
 
 Voice
 ---
