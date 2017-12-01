@@ -12,7 +12,7 @@
   "author": "Lim Chee Aun",
   "license": "MIT",
   "dependencies": {
-    "@http2/live": "^1.2.1",
-    "@http2/server": "^4.2.2"
+    "@http2/live": "^1.3.1",
+    "@http2/server": "^4.4.0"
   }
 }
