@@ -158,7 +158,7 @@ header .desc b{
 }
 
 footer{
-  padding: 40px 1em;
+  padding: 40px;
 }
 
 @media only screen and (min-width: 400px){
