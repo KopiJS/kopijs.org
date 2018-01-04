@@ -94,7 +94,9 @@ xhr.onload = function(){
   try {
     var res = JSON.parse(this.responseText);
     if (!res || !res.items || !res.items.length) return;
-    var firstEvent = res.items[0];
+    var firstEvent = res.items.sort(function(a, b){
+      return new Date(a.start.dateTime) - new Date(b.start.dateTime);
+    })[0];
     var url = firstEvent.description.trim();
     var date = new Date(firstEvent.start.dateTime);
     var offsetDate = tzDate(date, 8);
