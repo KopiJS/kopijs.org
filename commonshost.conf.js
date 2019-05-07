@@ -1,7 +1,6 @@
 module.exports = {
   hosts: [
     {
-      domain: 'kopijs.org',
       manifest: [
         {
           glob: '**/*.html',
