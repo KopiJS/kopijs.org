@@ -13,7 +13,7 @@
   "author": "Lim Chee Aun",
   "license": "MIT",
   "dependencies": {
-    "@commonshost/cli": "~5.0.0",
+    "@commonshost/cli": "~5.1.0",
     "@commonshost/server": "~6.10.3"
   }
 }
