@@ -1,19 +1,12 @@
 {
   "name": "kopijs.org",
-  "version": "2.0.0",
-  "private": true,
+  "version": "3.0.0",
   "description": "The official website https://kopijs.org/",
   "main": "index.js",
   "scripts": {
-    "start": "server start --watch",
-    "deploy": "commonshost deploy",
-    "commonshost": "commonshost"
+    "start": "npx serve public"
   },
   "repository": "github:KopiJS/kopijs.org",
   "author": "Lim Chee Aun",
-  "license": "MIT",
-  "dependencies": {
-    "@commonshost/cli": "~5.0.0",
-    "@commonshost/server": "~6.10.3"
-  }
+  "license": "MIT"
 }
