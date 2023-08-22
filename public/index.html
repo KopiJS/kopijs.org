@@ -164,8 +164,10 @@
     .then((r) => r.json())
     .then((response) => {
       console.log(response);
-      let html = marked.parse(response[0].body);
+      const { body, html_url } = response[0];
+      let html = marked.parse(body);
       html = html.replace(/<(\/?)h1>/g, '<$1h3>');
-      $nextMeetup.innerHTML = `<h2>Upcoming!</h2>` + html;
+      $nextMeetup.innerHTML =
+        `<h2><a href="${html_url}">Upcoming ⬇️</a></h2>` + html;
     });
 </script>
