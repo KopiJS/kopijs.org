@@ -123,7 +123,7 @@ header .desc b {
   margin-bottom: 0;
 }
 #next-meetup h2 {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-family: Khula, 'lucida grande', 'lucida sans', 'helvetica neue',
     helvetica, arial, sans-serif;
   margin-bottom: 0;
@@ -135,6 +135,10 @@ header .desc b {
   margin: 0;
   padding: 0 0 0 0.5em;
   border-left: 5px solid #6e4228;
+}
+#next-meetup ul {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 #email-form {
@@ -194,5 +198,11 @@ footer hr {
 @media only screen and (min-width: 500px) {
   header .desc {
     font-size: 3em;
+  }
+}
+
+@media only screen and (min-width: 681px) {
+  #next-meetup {
+    border-radius: 32px;
   }
 }
