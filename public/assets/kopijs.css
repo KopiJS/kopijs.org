@@ -206,3 +206,47 @@ footer hr {
     border-radius: 32px;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  html, body {
+    color: rgba(255, 255, 255, 0.7);
+    background-color: #1a120c;
+  }
+  a {
+    color: #d4a574;
+    border-bottom-color: #3a281e;
+  }
+  a:hover {
+    border-color: #d4a574;
+  }
+  header .social a:hover {
+    color: #fff;
+  }
+  header .desc b {
+    color: #fff;
+  }
+  #next-meetup {
+    background-color: #241911;
+  }
+  #next-meetup a {
+    color: #fff;
+  }
+  #next-meetup a:hover {
+    background-color: #3a281e;
+  }
+  #next-meetup blockquote {
+    border-left-color: #d4a574;
+  }
+  #email-form input {
+    border-color: #d4a574;
+    background-color: #1a120c;
+    color: #fff;
+  }
+  #email-form input[type='submit'] {
+    background-color: #d4a574;
+    color: #1a120c;
+  }
+  footer hr {
+    border-top-color: #2a1e16;
+  }
+}
