@@ -201,6 +201,39 @@ footer hr {
   }
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  top: -50vh;
+  left: -50vw;
+  width: 200vw;
+  height: 200vh;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+  background:
+    radial-gradient(ellipse 40% 30% at 20% 20%, rgba(180, 120, 70, 0.30) 0%, transparent 100%),
+    radial-gradient(ellipse 30% 25% at 80% 30%, rgba(200, 150, 100, 0.25) 0%, transparent 100%),
+    radial-gradient(ellipse 35% 20% at 50% 70%, rgba(150, 90, 50, 0.20) 0%, transparent 100%),
+    radial-gradient(ellipse 25% 30% at 10% 80%, rgba(210, 170, 130, 0.15) 0%, transparent 100%);
+  animation: cloudDrift 5s ease-in-out infinite alternate;
+}
+
+@keyframes cloudDrift {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(15vw, -8vh) rotate(8deg); }
+}
+
+@media (prefers-color-scheme: dark) {
+  body::before {
+    background:
+      radial-gradient(ellipse 40% 30% at 20% 20%, rgba(180, 130, 90, 0.25) 0%, transparent 100%),
+      radial-gradient(ellipse 30% 25% at 80% 30%, rgba(130, 90, 60, 0.20) 0%, transparent 100%),
+      radial-gradient(ellipse 35% 20% at 50% 70%, rgba(110, 70, 40, 0.15) 0%, transparent 100%),
+      radial-gradient(ellipse 25% 30% at 10% 80%, rgba(90, 60, 40, 0.12) 0%, transparent 100%);
+  }
+}
+
 @media only screen and (min-width: 681px) {
   #next-meetup {
     border-radius: 32px;
