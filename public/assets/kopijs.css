@@ -201,13 +201,10 @@ footer hr {
   }
 }
 
-body::before {
+html::before {
   content: '';
   position: fixed;
-  top: -50vh;
-  left: -50vw;
-  width: 200vw;
-  height: 200vh;
+  inset: calc(-30vw - 30vh);
   z-index: 0;
   pointer-events: none;
   will-change: transform;
@@ -225,7 +222,7 @@ body::before {
 }
 
 @media (prefers-color-scheme: dark) {
-  body::before {
+  html::before {
     background:
       radial-gradient(ellipse 40% 30% at 20% 20%, rgba(180, 130, 90, 0.25) 0%, transparent 100%),
       radial-gradient(ellipse 30% 25% at 80% 30%, rgba(130, 90, 60, 0.20) 0%, transparent 100%),
